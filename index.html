@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBR PHOTO | Premium Cinematic Photography & Videography</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description"
+        content="Welcome to SBR PHOTO. Capturing your timeless moments through fine art luxury weddings, dramatic portraits, high-energy events, and cinematic storytelling films. Book your bespoke shoot today.">
+    <meta name="keywords"
+        content="SBR PHOTO, photography, videography, luxury wedding photography, cinematic wedding films, portrait photography, professional editing, album design">
+    <meta name="author" content="SBR PHOTO Studio">
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=4.0">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <!-- 1. Default Tall Centered Header (Desktop only) -->
+        <div class="nav-container-centered">
+            <a href="#home" class="logo-centered">
+                <span class="logo-main-centered">SNAPS BY RAJESH</span>
+                <span class="logo-sub-centered">Photography</span>
+            </a>
+            <ul class="nav-links-centered">
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <!-- 2. Compact Sticky Header (Fades/Slides in on scroll) -->
+        <div class="nav-container-sticky">
+            <a href="#home" class="logo-sticky">
+                <span class="logo-main-sticky">SNAPS BY RAJESH</span>
+                <span class="logo-sub-sticky">Photography</span>
+            </a>
+
+            <ul class="nav-links-sticky" id="nav-menu">
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+
+            <div class="header-cta-sticky">
+                <a href="#book-shoot" class="btn-header-cta">BOOK A SHOOT</a>
+            </div>
+
+            <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- 1. HOME SECTION & HERO -->
+    <section id="home" class="hero">
+        <!-- Subtle Premium Background Video Carousel -->
+        <div class="hero-bg-video-carousel">
+            <div class="hero-bg-video-slide active">
+                <video class="hero-bg-video" autoplay loop muted playsinline>
+                    <source src="assets/couple.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-bg-video-slide">
+                <video class="hero-bg-video" autoplay loop muted playsinline>
+                    <source src="assets/couple.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-bg-video-slide">
+                <video class="hero-bg-video" autoplay loop muted playsinline>
+                    <source src="assets/birthday.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-bg-video-slide">
+                <video class="hero-bg-video" autoplay loop muted playsinline>
+                    <source src="assets/drone.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-bg-video-overlay"></div>
+        </div>
+
+        <button class="hero-nav-arrow prev" id="hero-prev-btn" aria-label="Previous Slide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="hero-nav-arrow next" id="hero-next-btn" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="hero-container-split">
+            <!-- Left Column: Typography & Actions -->
+            <div class="hero-text-col">
+                <h1 class="hero-title">CAPTURING MOMENTS<br><span class="cursive-text">Creating Memories</span></h1>
+                <p class="hero-subcategories">WEDDINGS &bull; PORTRAITS &bull; EVENTS &bull; FILMS</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-hero-solid">VIEW PORTFOLIO</a>
+                    <a href="#book-shoot" class="btn btn-hero-outline">BOOK A SHOOT</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Rounded Showcase Card Slider -->
+            <div class="hero-card-col">
+                <div class="hero-showcase-card">
+                    <!-- Slide 1: Bride Smiling (Wedding) -->
+                    <div class="hero-card-slide active">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800"
+                            alt="Wedding Couple Embrace" class="hero-card-fallback-img">
+                    </div>
+                    <!-- Slide 2: Couple Holding Hands (Pre-wedding) -->
+                    <div class="hero-card-slide">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800"
+                            alt="Couple Intimacy" class="hero-card-fallback-img">
+                    </div>
+                    <!-- Slide 3: Birthday Celebrations -->
+                    <div class="hero-card-slide">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800"
+                            alt="Birthday Celebrations" class="hero-card-fallback-img">
+                    </div>
+                    <!-- Slide 4: Drone Landscape / Scenic -->
+                    <div class="hero-card-slide">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800"
+                            alt="Drone Scenic Shot" class="hero-card-fallback-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. BIOGRAPHY & STATS SECTION -->
+    <section class="section bio-section" id="about">
+        <div class="bio-container">
+            <!-- Left Column: Portrait -->
+            <div class="bio-img-col">
+                <div class="bio-img-wrapper">
+                    <!-- Automatically transitioning photographer images -->
+                    <img src="assets/photographer.png"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=800';"
+                        alt="SBR Rajesh Lead Photographer" class="bio-portrait-img active">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800"
+                        alt="SBR Rajesh Capturing Shots" class="bio-portrait-img">
+                    <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=800"
+                        alt="SBR Rajesh Creative Studio" class="bio-portrait-img">
+                </div>
+            </div>
+
+
+            <!-- Right Column: Info & Stats Grid -->
+            <div class="bio-info-col">
+                <div class="bio-details-grid">
+                    <!-- Left Column of Right Column: Bio & Reviews -->
+                    <div class="bio-story-wrap">
+                        <span class="tagline">BEHIND THE LENS</span>
+                        <h2 class="bio-title">Meet the <span>Brothers</span></h2>
+                        <p class="bio-text">We are two brothers united by a shared passion for visual storytelling. With one behind the lens capturing raw, authentic emotions, and the other directing the cinematic flow, we bring your timeless moments to life. For us, every picture has a story to tell, and we are here to preserve yours beautifully.</p>
+                        <div class="bio-signature">Rajesh & SBR Team</div>
+
+                        <!-- SIGNATURE APPROACH BLOCK (Replaces Testimonials) -->
+                        <div class="signature-approach-wrap">
+                            <span class="tagline small">OUR APPROACH</span>
+                            <div class="approach-grid">
+                                <div class="approach-item">
+                                    <div class="approach-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    <div class="approach-content">
+                                        <h4>Bespoke Color Artistry</h4>
+                                        <p>Every single frame is individually hand-retouched, color-matched, and enhanced with our signature high-end film tones.</p>
+                                    </div>
+                                </div>
+                                <div class="approach-item">
+                                    <div class="approach-icon"><i class="fa-solid fa-signature"></i></div>
+                                    <div class="approach-content">
+                                        <h4>Cinematic Narrative</h4>
+                                        <p>We reject cookie-cutter posing. We document unscripted laughter, micro-interactions, and genuine connection.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column of Right Column: Stats counters -->
+                    <div class="bio-stats-wrap">
+                        <div class="stat-counter-box">
+                            <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">PROJECTS</span>
+                        </div>
+                        <div class="stat-counter-box">
+                            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">HAPPY CLIENTS</span>
+                        </div>
+                        <div class="stat-counter-box">
+                            <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">YEARS EXPERIENCE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Instagram feed -->
+                <div class="instagram-journey-wrap">
+                    <div class="instagram-journey-header">
+                        <h3 class="instagram-title">FOLLOW OUR JOURNEY <a href="https://instagram.com" target="_blank">@sbr.photography</a></h3>
+                        <div class="journey-social-links">
+                            <a href="https://instagram.com" target="_blank" class="journey-social-btn" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" class="journey-social-btn" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="instagram-grid">
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400"
+                                alt="Instagram Post 1">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400"
+                                alt="Instagram Post 2">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=400"
+                                alt="Instagram Post 3">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400"
+                                alt="Instagram Post 4">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=400"
+                                alt="Instagram Post 5">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                        <div class="instagram-item">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400"
+                                alt="Instagram Post 6">
+                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. PORTFOLIO SECTION -->
+    <section class="section" id="portfolio">
+        <div class="container">
+
+            <!-- Portfolio Categories Section -->
+            <div class="section-header">
+                <span class="tagline">Explore Collections</span>
+                <h2>The <span>Gallery</span></h2>
+                <p>Filter through our customized category vaults to view curated photo and video stories.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="weddings">💍 Weddings</button>
+                <button class="filter-btn" data-filter="pre-weddings">❤️ Pre-Weddings</button>
+                <button class="filter-btn" data-filter="birthdays">🎂 Birthdays</button>
+                <button class="filter-btn" data-filter="baby-shoots">👶 Baby Shoots</button>
+                <button class="filter-btn" data-filter="fashion">👗 Fashion</button>
+                <button class="filter-btn" data-filter="portraits">🧑 Portraits</button>
+                <button class="filter-btn" data-filter="events">🎉 Events</button>
+                <button class="filter-btn" data-filter="films">🎥 Films & Cinematic</button>
+            </div>
+
+            <!-- Gallery Grid Elements -->
+            <div class="gallery-grid" id="gallery-container">
+                <!-- Item 1: Wedding -->
+                <div class="gallery-item" data-category="weddings"
+                    data-src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200"
+                    data-title="Italian Sunset Embrace"
+                    data-desc="Golden backlit capture in Tuscany, Italy. Romantic and editorial framing.">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600"
+                        alt="Italian Sunset Wedding" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">💍 Weddings</span>
+                        <h4>Italian Sunset Embrace</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Pre-wedding -->
+                <div class="gallery-item" data-category="pre-weddings"
+                    data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200"
+                    data-title="Lakeside Whispers"
+                    data-desc="A dreamy morning pre-wedding session capturing raw intimate glances.">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600"
+                        alt="Lakeside Pre-wedding" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">❤️ Pre-Weddings</span>
+                        <h4>Lakeside Whispers</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Birthday -->
+                <div class="gallery-item" data-category="birthdays"
+                    data-src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200"
+                    data-title="Sparkler Ecstasy"
+                    data-desc="A stylish 25th birthday close-up, highlighting sparkles and dynamic lens flares.">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=600"
+                        alt="Birthday Sparkler" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">🎂 Birthdays</span>
+                        <h4>Sparkler Ecstasy</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Baby shoot -->
+                <div class="gallery-item" data-category="baby-shoots"
+                    data-src="https://images.unsplash.com/photo-1504482621593-8f47497b5770?q=80&w=1200"
+                    data-title="Angelic Slumber"
+                    data-desc="Soft, natural pastel baby photoshoot with elegant dream-like textures.">
+                    <img src="https://images.unsplash.com/photo-1504482621593-8f47497b5770?q=80&w=600"
+                        alt="Baby Sleep Portrait" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">👶 Baby Shoots</span>
+                        <h4>Angelic Slumber</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Fashion -->
+                <div class="gallery-item" data-category="fashion"
+                    data-src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200"
+                    data-title="Neo-Gothic Velvet"
+                    data-desc="Avant-garde luxury street editorial fashion, heavy contrast and saturation.">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=600"
+                        alt="Street Fashion editorial" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">👗 Fashion Photography</span>
+                        <h4>Neo-Gothic Velvet</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Portrait -->
+                <div class="gallery-item" data-category="portraits"
+                    data-src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200"
+                    data-title="Neon Midnight Shadows"
+                    data-desc="High-impact creative portrait using neon rim lights and deep shadows.">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600"
+                        alt="Midnight Portrait neon" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">🧑 Portrait Photography</span>
+                        <h4>Neon Midnight Shadows</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 7: Event -->
+                <div class="gallery-item" data-category="events"
+                    data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200"
+                    data-title="Rhapsody in Gold"
+                    data-desc="A beautifully illuminated luxury ballroom event. Vibrant stage and shadows.">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600"
+                        alt="Luxury Banquet event" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">🎉 Events</span>
+                        <h4>Rhapsody in Gold</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <!-- Item 8: Cinematic video representation -->
+                <div class="gallery-item" data-category="films"
+                    data-src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200"
+                    data-title="Tuscany Cinematic Film"
+                    data-desc="Stills from a cinematic anamorphic 4K documentary. Gold warmth grading.">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=600"
+                        alt="Cinematic lens camera" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-tag">🎥 Films & Cinematic Videos</span>
+                        <h4>Tuscany Cinematic Film</h4>
+                        <div class="view-btn"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. CONTACT & 5. BOOK SHOOT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-booking-grid">
+
+                <!-- Left: Contact Details -->
+                <div class="contact-info-panel">
+                    <div>
+                        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                            <span class="tagline">Get In Touch</span>
+                            <h2>Let's Capture <span>Your Story</span></h2>
+                            <p>Have questions about dates, venues, or customizable budgets? Reach out directly via our
+                                official networks.</p>
+                        </div>
+
+                        <div class="contact-card glass-panel">
+                            <!-- Mobile -->
+                            <div class="contact-item">
+                                <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-item-details">
+                                    <h4>Mobile Number</h4>
+                                    <p><a href="tel:+18005557760">+1 (800) 555-7760</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-item-details">
+                                    <h4>Email Address</h4>
+                                    <p><a href="mailto:hello@sbrphoto.com">hello@sbrphoto.com</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="contact-item">
+                                <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-item-details">
+                                    <h4>Studio Address</h4>
+                                    <p>Suite 304, Luxury Arts District, Manhattan, NY 10013</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks -->
+                    <div class="social-connect">
+                        <h3>Follow Our Journey</h3>
+                        <div class="social-grid">
+                            <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://pinterest.com" target="_blank" class="social-btn" aria-label="Pinterest"><i
+                                    class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://whatsapp.com" target="_blank" class="social-btn" aria-label="WhatsApp"><i
+                                    class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Forms Card (Tabbed Contact & Booking Wizard) -->
+                <div class="form-card glass-panel" id="book-shoot">
+                    <div class="form-tabs">
+                        <button class="form-tab-btn active" id="btn-tab-contact" data-form="contact-pane">General
+                            Inquiry</button>
+                        <button class="form-tab-btn" id="btn-tab-book" data-form="booking-pane">Book a Shoot 🚀</button>
+                    </div>
+
+                    <!-- GENERAL CONTACT FORM -->
+                    <div class="form-pane active" id="contact-pane">
+                        <form id="general-contact-form">
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="c-name">Full Name</label>
+                                    <input type="text" id="c-name" class="form-control" placeholder="E.g. Jane Doe"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-phone">Phone Number</label>
+                                    <input type="tel" id="c-phone" class="form-control"
+                                        placeholder="E.g. +1 (555) 019-2834" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="c-email">Email Address</label>
+                                    <input type="email" id="c-email" class="form-control"
+                                        placeholder="E.g. jane@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-event">Event Type</label>
+                                    <select id="c-event" class="form-control" required>
+                                        <option value="" disabled selected>Select event style...</option>
+                                        <option value="Wedding">💍 Wedding Shoot</option>
+                                        <option value="Pre-Wedding">❤️ Pre-Wedding Shoot</option>
+                                        <option value="Birthday">🎂 Birthday Celebration</option>
+                                        <option value="Baby Shoot">👶 Baby Shoot</option>
+                                        <option value="Fashion">👗 Fashion Portraitry</option>
+                                        <option value="Portrait">🧑 Portrait Session</option>
+                                        <option value="Event">🎉 General Event</option>
+                                        <option value="Film">🎥 Film & Cinematic Reel</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c-date">Proposed Date</label>
+                                <input type="date" id="c-date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c-message">Your Message</label>
+                                <textarea id="c-message" class="form-control"
+                                    placeholder="Tell us about your creative vision..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Send Inquiry <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- BOOKING WIZARD FORM -->
+                    <div class="form-pane" id="booking-pane">
+                        <div class="wizard-steps">
+                            <div class="wizard-step-node active" id="node-1">1</div>
+                            <div class="wizard-step-node" id="node-2">2</div>
+                            <div class="wizard-step-node" id="node-3">3</div>
+                        </div>
+
+                        <form id="wizard-booking-form">
+                            <!-- STEP 1: Shoot Specifications -->
+                            <div class="wizard-step-content active" id="step-1-content">
+                                <h3
+                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
+                                    Step 1: Shoot Details</h3>
+
+                                <label
+                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 12px; font-weight: 600;">
+                                    Select Services (Select all that apply)
+                                </label>
+                                <div class="service-select-grid">
+                                    <!-- Service Checkboxes -->
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Wedding"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-ring"></i>
+                                            <span>Wedding</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Pre-Wedding"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-heart"></i>
+                                            <span>Pre-Wedding</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Birthday"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-cake-candles"></i>
+                                            <span>Birthday</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Baby Shoot"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-baby"></i>
+                                            <span>Baby Shoot</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Fashion"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-shirt"></i>
+                                            <span>Fashion</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Portrait"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-user-astronaut"></i>
+                                            <span>Portrait</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Event"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-masks-theater"></i>
+                                            <span>Event</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Film Making"
+                                            class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-video"></i>
+                                            <span>Film Making</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-group-row">
+                                    <div class="form-group">
+                                        <label for="b-date">Event Date</label>
+                                        <input type="date" id="b-date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="b-location">Shoot Location</label>
+                                        <input type="text" id="b-location" class="form-control"
+                                            placeholder="E.g. Manhattan, NY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: Budget & Contact Info -->
+                            <div class="wizard-step-content" id="step-2-content" style="display: none;">
+                                <h3
+                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
+                                    Step 2: Budget & Coordinates</h3>
+
+                                <div class="form-group">
+                                    <label for="b-budget">Bespoke Budget Slider</label>
+                                    <div class="budget-slider-wrapper">
+                                        <input type="range" id="b-budget" class="range-styled" min="400" max="10000"
+                                            step="100" value="1500">
+                                        <span class="budget-val-display" id="budget-value">$1,500</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="b-name">Full Name</label>
+                                    <input type="text" id="b-name" class="form-control" placeholder="E.g. Jane Doe">
+                                </div>
+
+                                <div class="form-group-row">
+                                    <div class="form-group">
+                                        <label for="b-phone">Mobile Number</label>
+                                        <input type="tel" id="b-phone" class="form-control"
+                                            placeholder="E.g. +1 (555) 019-2834">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="b-email">Email Address</label>
+                                        <input type="email" id="b-email" class="form-control"
+                                            placeholder="E.g. jane@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Special Notes & Final CTA -->
+                            <div class="wizard-step-content" id="step-3-content" style="display: none;">
+                                <h3
+                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
+                                    Step 3: Review & Personal Touches</h3>
+
+                                <div class="form-group">
+                                    <label for="b-notes">Additional Notes</label>
+                                    <textarea id="b-notes" class="form-control"
+                                        placeholder="Tell us if you need drone operators, fast-delivery add-ons, physical photobooks..."></textarea>
+                                </div>
+
+                                <div class="glass-panel"
+                                    style="padding: 20px; text-align: center; border-radius: var(--radius-sm); border-color: rgba(223,183,108,0.2); margin-top: 24px; background: rgba(223, 183, 108, 0.03);">
+                                    <h4
+                                        style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-gold); margin-bottom: 6px;">
+                                        "Let's Create Memories Together"</h4>
+                                    <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Click below to
+                                        transmit your custom package structure. We'll lock the date and get in touch
+                                        within 24 hours.</p>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Controls -->
+                            <div class="wizard-nav">
+                                <button type="button" class="btn btn-secondary" id="w-prev-btn"
+                                    style="visibility: hidden;">
+                                    <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary" id="w-next-btn">
+                                    Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. BOTTOM CTA BANNER -->
+    <section class="bottom-cta-banner">
+        <div class="cta-banner-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=1200');">
+        </div>
+        <div class="cta-banner-overlay"></div>
+        <div class="cta-banner-content">
+            <h2>LET'S CREATE SOMETHING BEAUTIFUL TOGETHER</h2>
+            <a href="#book-shoot" class="btn btn-hero-solid">BOOK YOUR SHOOT</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copy">
+                &copy; 2026 <span>SBR PHOTO</span>. All Rights Reserved. Crafted with passion.
+            </div>
+
+            <a href="#home" class="logo" style="align-items: center;">
+                <span class="logo-main" style="font-size: 1.1rem; letter-spacing: 0.1em;">SBR PHOTO</span>
+                <span class="logo-sub" style="font-size: 0.5rem; letter-spacing: 0.3em;">Capture Fine Art</span>
+            </a>
+
+            <div class="footer-nav">
+                <a href="#home">Work</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP GALLERY LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Lightbox"><i
+                class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content">
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image"><i
+                    class="fa-solid fa-chevron-left"></i></button>
+            <img src="" alt="" class="lightbox-media" id="lightbox-img">
+            <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Next Image"><i
+                    class="fa-solid fa-chevron-right"></i></button>
+
+            <div class="lightbox-details">
+                <span class="lightbox-category" id="lightbox-cat">Category</span>
+                <h3 class="lightbox-title" id="lightbox-title">Asset Title</h3>
+                <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 8px;" id="lightbox-desc">
+                    Asset Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toast-box">
+        <div class="toast" id="success-toast">
+            <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="toast-message" id="toast-msg">Message successfully transmitted!</div>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script src="app.js?v=4.0"></script>
+</body>
+
+</html>
