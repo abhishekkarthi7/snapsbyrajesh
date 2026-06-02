@@ -1185,55 +1185,73 @@ header.scrolled .nav-container-sticky {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(7, 7, 9, 0.2) 0%, rgba(7, 7, 9, 0.8) 100%);
-    opacity: 0;
-    transition: var(--transition-smooth);
+    background: linear-gradient(180deg, transparent 35%, rgba(7, 7, 9, 0.85) 100%) !important;
+    opacity: 1 !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 24px;
+    padding: 20px;
     z-index: 2;
+    transition: var(--transition-smooth);
 }
 
-.gallery-overlay-tag {
-    font-size: 0.7rem;
+.gallery-card-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gallery-card-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin: 0;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+}
+
+.learn-more-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 8px;
+}
+
+.learn-more-action span {
+    font-size: 0.7rem;
+    font-weight: 700;
     color: var(--color-gold);
-    margin-bottom: 6px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.gallery-overlay h4 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.view-btn {
-    width: 36px;
-    height: 36px;
+.round-arrow-btn {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: var(--gradient-gold);
-    color: #070709;
+    border: 1px solid var(--color-gold);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
-    align-self: flex-start;
-    transform: translateY(10px);
+    color: var(--color-gold);
+    font-size: 0.8rem;
+    background: rgba(223, 183, 108, 0.05);
     transition: var(--transition-smooth);
 }
 
 .gallery-item:hover .gallery-img {
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-item:hover .view-btn {
-    transform: translateY(0);
+.gallery-item:hover .round-arrow-btn {
+    background: var(--gradient-gold);
+    color: #070709;
+    border-color: var(--color-gold);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Contact & Booking Section */
@@ -1290,31 +1308,32 @@ header.scrolled .nav-container-sticky {
     line-height: 1.5;
 }
 
+/* Redesigned Contact Section */
 .contact-section {
     background-color: var(--color-bg-primary);
+    padding: 120px 24px;
 }
+
 .contact-booking-grid {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 60px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: flex-start;
 }
 
-.contact-info-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.contact-card {
-    padding: 30px;
+.contact-card.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(223, 183, 108, 0.15);
+    padding: 40px;
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-premium);
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
 .contact-item:last-child {
@@ -1322,68 +1341,78 @@ header.scrolled .nav-container-sticky {
 }
 
 .contact-item-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-sm);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     background: rgba(223, 183, 108, 0.08);
-    border: 1px solid rgba(223, 183, 108, 0.15);
+    border: 1px solid rgba(223, 183, 108, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-gold);
+    font-size: 1.1rem;
     flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.contact-item:hover .contact-item-icon {
+    background: var(--gradient-gold);
+    color: #070709;
+    box-shadow: var(--shadow-glow);
 }
 
 .contact-item-details h4 {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--color-gold);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: 700;
 }
 
 .contact-item-details p,
 .contact-item-details a {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
 }
 
 .contact-item-details a:hover {
     color: var(--color-gold);
 }
 
-.social-connect h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-}
-
-.social-btn {
-    aspect-ratio: 1/1;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+/* General Inquiry Form Upgrades */
+.contact-section .form-card.glass-panel {
     background: rgba(255, 255, 255, 0.02);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-secondary);
-    font-size: 1.15rem;
-    transition: var(--transition-smooth);
+    border: 1px solid rgba(223, 183, 108, 0.15);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-premium);
 }
 
-.social-btn:hover {
-    border-color: var(--color-gold);
-    color: #070709;
-    background: var(--gradient-gold);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-glow);
+.contact-section .form-control {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--color-text-primary) !important;
+    text-transform: uppercase !important;
+}
+
+.contact-section .form-control::placeholder {
+    color: var(--color-text-muted) !important;
+    text-transform: uppercase !important;
+}
+
+.contact-section .form-control:focus {
+    border-color: var(--color-gold) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    box-shadow: 0 0 10px rgba(223, 183, 108, 0.15) !important;
+}
+
+.contact-section .form-group label {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    font-weight: 700;
 }
 
 /* Contact Form / Booking Wizard Forms */
@@ -2118,6 +2147,170 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Bottom CTA Banner */
+.bottom-cta-banner {
+    position: relative;
+    height: 380px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bottom-cta-banner .cta-banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+    filter: brightness(0.4) contrast(1.1);
+}
+
+.bottom-cta-banner .cta-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(7, 7, 9, 0.95) 0%, rgba(7, 7, 9, 0.6) 50%, rgba(7, 7, 9, 0.95) 100%);
+    z-index: 2;
+}
+
+.bottom-cta-banner .cta-banner-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.bottom-cta-banner h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* Premium Multi-Column Footer */
+footer {
+    background-color: #040405;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 80px 24px 0 24px;
+}
+
+.footer-container-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 0.9fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.footer-about-text {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-list a {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+    transition: var(--transition-fast);
+}
+
+.footer-links-list a:hover {
+    color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+.footer-col p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 30px 0;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.footer-copy span {
+    color: var(--color-gold);
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social-icons a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-social-icons a:hover {
+    color: #070709;
+    background: var(--gradient-gold);
+    border-color: var(--color-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Responsive Breakpoints */

@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach event listeners to gallery items for Learn More clicks
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {
-        const learnMoreBtn = item.querySelector('.btn-learn-more');
+        const learnMoreBtn = item.querySelector('.learn-more-action');
         if (learnMoreBtn) {
             learnMoreBtn.addEventListener('click', (e) => {
                 e.stopPropagation(); // Avoid triggering parent click
@@ -375,24 +375,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. STEP-BY-STEP BOOKING WIZARD ---
+    // --- 7. STEP-BY-STEP BOOKING WIZARD (Exactly 2 Steps) ---
     const wizardForm = document.getElementById('wizard-booking-form');
     const wizardPrevBtn = document.getElementById('w-prev-btn');
     const wizardNextBtn = document.getElementById('w-next-btn');
-    const budgetSliderInput = document.getElementById('b-budget');
-    const budgetValIndicator = document.getElementById('budget-value');
 
     let currentWizardStep = 1;
 
-    if (budgetSliderInput && budgetValIndicator) {
-        budgetSliderInput.addEventListener('input', (e) => {
-            const formattedVal = Number(e.target.value).toLocaleString();
-            budgetValIndicator.textContent = `$${formattedVal}`;
-        });
-    }
-
     function updateWizardUI() {
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 2; i++) {
             const node = document.getElementById(`node-${i}`);
             const content = document.getElementById(`step-${i}-content`);
 
@@ -416,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 wizardPrevBtn.style.visibility = 'visible';
 
-                if (currentWizardStep === 3) {
+                if (currentWizardStep === 2) {
                     wizardNextBtn.innerHTML = 'Submit Booking <i class="fa-solid fa-check" style="margin-left: 6px;"></i>';
                 } else {
                     wizardNextBtn.innerHTML = 'Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>';
@@ -474,13 +465,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (wizardNextBtn) {
         wizardNextBtn.addEventListener('click', () => {
-            if (currentWizardStep < 3) {
+            if (currentWizardStep < 2) {
                 if (validateStep(currentWizardStep)) {
                     currentWizardStep++;
                     updateWizardUI();
                 }
             } else {
-                submitBookingForm();
+                if (validateStep(currentWizardStep)) {
+                    submitBookingForm();
+                }
             }
         });
     }
@@ -496,8 +489,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function submitBookingForm() {
         const name = document.getElementById('b-name').value.trim();
+        const phone = document.getElementById('b-phone').value.trim();
+        const email = document.getElementById('b-email').value.trim();
+        const date = document.getElementById('b-date').value;
+        const location = document.getElementById('b-location').value.trim();
 
-        showToast("Transmitting booking request secure handshake...", "fa-clock");
+        // Get selected services
+        const selectedServices = [];
+        document.querySelectorAll('input[name="b-services"]:checked').forEach(cb => {
+            selectedServices.push(cb.value.toUpperCase());
+        });
+
+        const servicesStr = selectedServices.join(', ');
+
+        showToast("PREPARING WHATSAPP BOOKING HANDSHAKE...", "fa-clock");
+
+        // Format message for WhatsApp
+        const message = `HELLO SBR PHOTO STUDIO,
+
+I WOULD LIKE TO BOOK A BESPOKE SHOOT! HERE ARE MY BOOKING DETAILS:
+
+- SERVICES INTERESTED: ${servicesStr}
+- PROPOSED SHOOT DATE: ${date}
+- PROPOSED LOCATION: ${location.toUpperCase()}
+
+CLIENT INFORMATION:
+- FULL NAME: ${name.toUpperCase()}
+- MOBILE NUMBER: ${phone}
+- EMAIL ADDRESS: ${email.toUpperCase()}
+
+THANK YOU!`;
+
+        // URL encode the message
+        const encodedMessage = encodeURIComponent(message);
+        
+        // WhatsApp Phone Number (Rajesh & Team number: e.g. +91 98765 43210 -> 919876543210)
+        // You can change this number below to your exact WhatsApp number!
+        const whatsappNumber = "919876543210"; 
 
         setTimeout(() => {
             if (wizardForm) wizardForm.reset();
@@ -505,7 +533,11 @@ document.addEventListener('DOMContentLoaded', () => {
             updateWizardUI();
             closeBookingModal();
 
-            showToast(`Congratulations ${name}! Custom shoot query successfully logged.`, "fa-circle-check");
+            // Redirect to WhatsApp in a new tab
+            const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+            window.open(waUrl, '_blank');
+
+            showToast(`BOOKING DETAILS READY! REDIRECTED TO WHATSAPP.`, "fa-circle-check");
         }, 1500);
     }
 
@@ -525,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 10. TOAST NOTIFICATION HANDLER ---
+    // --- 9. TOAST NOTIFICATION HANDLER ---
     const toastBox = document.getElementById('toast-box');
     const successToast = document.getElementById('success-toast');
     const toastMsg = document.getElementById('toast-msg');
@@ -546,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // --- 11. HERO BACKGROUND VIDEO PLAYBACK HANDLER ---
+    // --- 10. HERO BACKGROUND VIDEO PLAYBACK HANDLER ---
     const bgVideos = document.querySelectorAll('.hero-bg-video');
     bgVideos.forEach(video => {
         if (video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2) {
