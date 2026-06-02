@@ -193,135 +193,189 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(cycleBioImages, bioImgInterval);
     }
 
-    // --- 5. PORTFOLIO CATEGORY FILTERING ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-
-                if (filterValue === 'all' || category === filterValue) {
-                    item.classList.remove('hidden');
-                    item.style.transform = 'scale(1)';
-                    item.style.opacity = '1';
-                } else {
-                    item.classList.add('hidden');
-                    item.style.transform = 'scale(0.8)';
-                    item.style.opacity = '0';
-                }
-            });
-        });
-    });
-
-    // Handle view-more link triggers in Featured Cards
-    document.querySelectorAll('.view-more-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const filterToApply = link.getAttribute('data-filter');
-            const targetFilterBtn = document.querySelector(`.filter-btn[data-filter="${filterToApply}"]`);
-            if (targetFilterBtn) {
-                targetFilterBtn.click();
-            }
-        });
-    });
-
-    // --- 6. DETAILED GALLERIES LIGHTBOX MODAL ---
+    // --- 5. PORTFOLIO "LEARN MORE" & DYNAMIC LIGHTBOX ---
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCat = document.getElementById('lightbox-cat');
     const lightboxTitle = document.getElementById('lightbox-title');
     const lightboxDesc = document.getElementById('lightbox-desc');
     const lightboxClose = document.getElementById('lightbox-close-btn');
     const lightboxPrev = document.getElementById('lightbox-prev-btn');
     const lightboxNext = document.getElementById('lightbox-next-btn');
+    const lightboxPreviewsGrid = document.getElementById('lightbox-previews-grid');
 
-    let activeGalleryGroup = [];
-    let currentLightboxIdx = 0;
+    let currentProjectImages = [];
+    let currentImageIndex = 0;
 
-    function updateActiveGalleryList() {
-        activeGalleryGroup = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+    function openProjectLightbox(item) {
+        const rawImages = item.getAttribute('data-images') || '';
+        currentProjectImages = rawImages.split(',').map(img => img.trim()).filter(img => img.length > 0);
+        
+        if (currentProjectImages.length === 0) return;
+
+        currentImageIndex = 0;
+        const projectTitle = item.getAttribute('data-title') || 'SBR Collection';
+        const projectDesc = item.getAttribute('data-desc') || '';
+
+        lightboxTitle.textContent = projectTitle;
+        lightboxDesc.textContent = projectDesc;
+        
+        updateLightboxImage();
+        buildLightboxThumbnails();
+
+        if (lightboxModal) {
+            lightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
-    function openLightbox(index) {
-        updateActiveGalleryList();
-        currentLightboxIdx = index;
-
-        const currentItem = activeGalleryGroup[currentLightboxIdx];
-        if (!currentItem) return;
-
-        const mediaSrc = currentItem.getAttribute('data-src');
-        const mediaTitle = currentItem.getAttribute('data-title');
-        const mediaDesc = currentItem.getAttribute('data-desc');
-        const rawCategory = currentItem.getAttribute('data-category');
-
-        let displayCategory = rawCategory.toUpperCase();
-        if (rawCategory === 'baby-shoots') displayCategory = 'BABY SHOOTS';
-        if (rawCategory === 'pre-weddings') displayCategory = 'PRE-WEDDINGS';
-
-        lightboxImg.src = mediaSrc;
-        lightboxCat.textContent = displayCategory;
-        lightboxTitle.textContent = mediaTitle;
-        lightboxDesc.textContent = mediaDesc;
-
-        lightboxModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
+    function updateLightboxImage() {
+        if (!lightboxImg || currentProjectImages.length === 0) return;
+        
+        // Fade out transition effect
+        lightboxImg.style.opacity = '0';
+        
+        setTimeout(() => {
+            lightboxImg.src = currentProjectImages[currentImageIndex];
+            lightboxImg.style.opacity = '1';
+            
+            // Highlight active thumbnail
+            const thumbs = lightboxPreviewsGrid.querySelectorAll('.lightbox-thumb');
+            thumbs.forEach((thumb, idx) => {
+                if (idx === currentImageIndex) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }, 150);
     }
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            updateActiveGalleryList();
-            const clickedIdx = activeGalleryGroup.indexOf(item);
-            if (clickedIdx !== -1) {
-                openLightbox(clickedIdx);
+    function buildLightboxThumbnails() {
+        if (!lightboxPreviewsGrid) return;
+        lightboxPreviewsGrid.innerHTML = '';
+
+        currentProjectImages.forEach((imgUrl, idx) => {
+            const thumb = document.createElement('img');
+            thumb.src = imgUrl;
+            thumb.alt = `Preview ${idx + 1}`;
+            thumb.classList.add('lightbox-thumb');
+            if (idx === currentImageIndex) {
+                thumb.classList.add('active');
             }
+
+            thumb.addEventListener('click', () => {
+                currentImageIndex = idx;
+                updateLightboxImage();
+            });
+
+            lightboxPreviewsGrid.appendChild(thumb);
+        });
+    }
+
+    function navigateLightbox(direction) {
+        if (currentProjectImages.length === 0) return;
+        currentImageIndex = (currentImageIndex + direction + currentProjectImages.length) % currentProjectImages.length;
+        updateLightboxImage();
+    }
+
+    // Attach event listeners to gallery items for Learn More clicks
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        const learnMoreBtn = item.querySelector('.btn-learn-more');
+        if (learnMoreBtn) {
+            learnMoreBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Avoid triggering parent click
+                openProjectLightbox(item);
+            });
+        }
+        // Fallback: clicking the item overlay opens as well
+        const overlay = item.querySelector('.gallery-overlay');
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                openProjectLightbox(item);
+            });
+        }
+    });
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', () => {
+            if (lightboxModal) {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    }
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => navigateLightbox(1));
+    }
+
+    if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                if (lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+
+
+    // --- 6. SLIDE-UP BOOKING WIZARD MODAL ---
+    const bookingOverlay = document.getElementById('booking-modal-overlay');
+    const bookingCloseBtn = document.getElementById('booking-close-btn');
+    const bookingTriggers = document.querySelectorAll('.trigger-booking');
+
+    function openBookingModal() {
+        if (bookingOverlay) {
+            bookingOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            currentWizardStep = 1;
+            updateWizardUI();
+        }
+    }
+
+    function closeBookingModal() {
+        if (bookingOverlay) {
+            bookingOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    bookingTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBookingModal();
         });
     });
 
-    function closeLightbox() {
-        lightboxModal.classList.remove('active');
-        document.body.style.overflow = ''; 
-        setTimeout(() => {
-            lightboxImg.src = '';
-        }, 300);
+    if (bookingCloseBtn) {
+        bookingCloseBtn.addEventListener('click', closeBookingModal);
     }
 
-    function rotateLightbox(dir) {
-        updateActiveGalleryList();
-        if (activeGalleryGroup.length === 0) return;
-        currentLightboxIdx = (currentLightboxIdx + dir + activeGalleryGroup.length) % activeGalleryGroup.length;
-        openLightbox(currentLightboxIdx);
-    }
-
-    if (lightboxModal && lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxPrev.addEventListener('click', () => rotateLightbox(-1));
-        lightboxNext.addEventListener('click', () => rotateLightbox(1));
-
-        lightboxModal.addEventListener('click', (e) => {
-            if (e.target === lightboxModal) {
-                closeLightbox();
+    if (bookingOverlay) {
+        bookingOverlay.addEventListener('click', (e) => {
+            if (e.target === bookingOverlay) {
+                closeBookingModal();
             }
         });
-
-        window.addEventListener('keydown', (e) => {
-            if (!lightboxModal.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') rotateLightbox(-1);
-            if (e.key === 'ArrowRight') rotateLightbox(1);
-        });
     }
 
-    // --- 7. BOOKING & INQUIRY SEPARATION LOGIC ---
-    // The general inquiry form and booking wizard are now separated into distinct sections,
-    // so tab switching logic is no longer required. All wizard step controls remain active below.
-
-    // --- 8. STEP-BY-STEP BOOKING WIZARD ---
+    // --- 7. STEP-BY-STEP BOOKING WIZARD ---
     const wizardForm = document.getElementById('wizard-booking-form');
     const wizardPrevBtn = document.getElementById('w-prev-btn');
     const wizardNextBtn = document.getElementById('w-next-btn');
@@ -449,12 +503,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (wizardForm) wizardForm.reset();
             currentWizardStep = 1;
             updateWizardUI();
+            closeBookingModal();
 
             showToast(`Congratulations ${name}! Custom shoot query successfully logged.`, "fa-circle-check");
         }, 1500);
     }
 
-    // --- 9. GENERAL CONTACT FORM SUBMISSION ---
+    // --- 8. GENERAL CONTACT FORM SUBMISSION ---
     const contactForm = document.getElementById('general-contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

@@ -140,7 +140,7 @@ button, input, select, textarea {
 }
 
 .section-header h2 span {
-    font-style: italic;
+    font-style: normal;
     color: var(--color-gold);
 }
 
@@ -1065,7 +1065,7 @@ header.scrolled .nav-container-sticky {
 }
 
 .portfolio-bio-content .highlight {
-    font-style: italic;
+    font-style: normal;
     color: var(--color-gold);
 }
 
@@ -1857,6 +1857,250 @@ footer {
 
 .footer-nav a:hover {
     color: var(--color-gold);
+}
+
+/* Gallery Learn More Button & Dynamic Layout */
+.btn-learn-more {
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.btn-learn-more:hover {
+    background: var(--gradient-gold);
+    color: #070709;
+    box-shadow: var(--shadow-glow);
+    border-color: var(--color-gold);
+}
+
+/* Lightbox Dynamic Multi-Image Grid */
+.lightbox-gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.lightbox-featured-wrap {
+    width: 100%;
+    max-height: 55vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-featured-img {
+    max-height: 55vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-previews-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.lightbox-thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.lightbox-thumb:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.lightbox-thumb.active {
+    opacity: 1;
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Slide-Up Booking Modal Overlay */
+.booking-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 7, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.booking-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.booking-modal-container {
+    max-width: 620px;
+    width: 90%;
+    position: relative;
+    transform: translateY(50px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.booking-modal-overlay.active .booking-modal-container {
+    transform: translateY(0);
+}
+
+/* High-Contrast Premium White Card Modal Theme */
+.booking-wizard-card {
+    background: #ffffff !important;
+    color: #070709 !important;
+    border-radius: var(--radius-lg);
+    padding: 35px 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.booking-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #6b6b75;
+    cursor: pointer;
+    line-height: 1;
+    transition: var(--transition-fast);
+    z-index: 100;
+}
+
+.booking-close-btn:hover {
+    color: var(--color-gold-dark);
+}
+
+.booking-wizard-card .section-header .tagline {
+    color: var(--color-gold-dark) !important;
+}
+
+.booking-wizard-card .section-header h3 span {
+    color: var(--color-gold-dark) !important;
+}
+
+/* Form Controls Inside White Card Modal */
+.booking-wizard-card .form-control {
+    background: #f8f9fa !important;
+    border: 1px solid rgba(7, 7, 9, 0.12) !important;
+    color: #070709 !important;
+}
+
+.booking-wizard-card .form-control::placeholder {
+    color: #9ea2a7 !important;
+}
+
+.booking-wizard-card .form-control:focus {
+    border-color: var(--color-gold-dark) !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(184, 145, 70, 0.15) !important;
+}
+
+.booking-wizard-card .form-group label {
+    color: #070709 !important;
+}
+
+/* Service Selector Grid for Modal */
+.booking-wizard-card .service-check-card {
+    background: #f8f9fa !important;
+    border: 1px solid rgba(7, 7, 9, 0.08) !important;
+}
+
+.booking-wizard-card .service-check-card i,
+.booking-wizard-card .service-check-card span {
+    color: #6b6b75 !important;
+}
+
+.booking-wizard-card .service-check-box input:checked + .service-check-card {
+    border-color: var(--color-gold-dark) !important;
+    background: rgba(223, 183, 108, 0.12) !important;
+    box-shadow: 0 4px 10px rgba(184, 145, 70, 0.1) !important;
+}
+
+.booking-wizard-card .service-check-box input:checked + .service-check-card i {
+    color: var(--color-gold-dark) !important;
+}
+
+.booking-wizard-card .service-check-box input:checked + .service-check-card span {
+    color: #070709 !important;
+}
+
+/* Wizard Stepper in Modal */
+.booking-wizard-card .wizard-steps::before {
+    background: rgba(7, 7, 9, 0.08) !important;
+}
+
+.booking-wizard-card .wizard-step-node {
+    background: #f8f9fa !important;
+    border-color: rgba(7, 7, 9, 0.12) !important;
+    color: #6b6b75 !important;
+}
+
+.booking-wizard-card .wizard-step-node.active {
+    border-color: var(--color-gold-dark) !important;
+    color: var(--color-gold-dark) !important;
+    box-shadow: 0 0 10px rgba(184, 145, 70, 0.2) !important;
+}
+
+.booking-wizard-card .wizard-step-node.completed {
+    background: var(--gradient-gold) !important;
+    border-color: var(--color-gold-dark) !important;
+    color: #070709 !important;
+}
+
+/* Range Slider in Modal */
+.booking-wizard-card .range-styled {
+    background: rgba(7, 7, 9, 0.1) !important;
+}
+
+.booking-wizard-card .budget-val-display {
+    color: var(--color-gold-dark) !important;
+}
+
+/* Secondary Button for Back Control in Modal */
+.booking-wizard-card .btn-secondary {
+    border-color: rgba(7, 7, 9, 0.15) !important;
+    color: #6b6b75 !important;
+}
+
+.booking-wizard-card .btn-secondary:hover {
+    border-color: var(--color-gold-dark) !important;
+    color: var(--color-gold-dark) !important;
+    background: rgba(184, 145, 70, 0.05) !important;
 }
 
 /* Animations */
