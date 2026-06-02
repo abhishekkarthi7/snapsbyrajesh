@@ -962,98 +962,44 @@ header.scrolled .nav-container-sticky {
     font-weight: 600;
 }
 
-/* Instagram section */
-.instagram-journey-wrap {
+/* Follow Our Journey section */
+.social-journey-wrap {
     margin-top: 50px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 40px;
 }
-.instagram-journey-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 15px;
+.social-journey-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-text-primary);
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-align: left;
 }
-.instagram-journey-header .instagram-title {
-    margin-bottom: 0;
+.social-grid-large {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
 }
-.journey-social-links {
-    display: flex;
-    gap: 10px;
-}
-.journey-social-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.02);
+.social-card {
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(15, 15, 20, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-text-secondary);
-    font-size: 1rem;
+    font-size: 1.5rem;
     transition: var(--transition-smooth);
+    box-shadow: var(--shadow-premium);
 }
-.journey-social-btn:hover {
+.social-card:hover {
     border-color: var(--color-gold);
     color: #070709;
     background: var(--gradient-gold);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
-}
-
-.instagram-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    letter-spacing: 0.15em;
-    color: var(--color-text-primary);
-    margin-bottom: 20px;
-}
-.instagram-title a {
-    color: var(--color-gold);
-    font-weight: 600;
-}
-.instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
-}
-.instagram-item {
-    position: relative;
-    aspect-ratio: 1/1;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.instagram-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-.instagram-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(7, 7, 9, 0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-gold);
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: var(--transition-smooth);
-}
-.instagram-item:hover img {
-    transform: scale(1.08);
-}
-.instagram-item:hover .instagram-hover {
-    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow), var(--shadow-premium);
 }
 
 /* Portfolio Section */
@@ -1291,6 +1237,62 @@ header.scrolled .nav-container-sticky {
 }
 
 /* Contact & Booking Section */
+.booking-section {
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.booking-layout-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+.booking-guide-panel {
+    padding: 30px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.guide-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.step-num {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    background: rgba(223, 183, 108, 0.08);
+    border: 1px solid rgba(223, 183, 108, 0.15);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.step-text h4 {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.step-text p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.contact-section {
+    background-color: var(--color-bg-primary);
+}
 .contact-booking-grid {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;

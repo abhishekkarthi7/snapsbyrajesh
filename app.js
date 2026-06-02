@@ -317,31 +317,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. FORM INQUIRY VS BOOKING TABS & PACKAGE PRE-SELECTION ---
-    const formTabBtns = document.querySelectorAll('.form-tab-btn');
-    const formPanes = document.querySelectorAll('.form-pane');
-
-    function switchFormTab(paneId) {
-        formTabBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-form') === paneId) {
-                btn.classList.add('active');
-            }
-        });
-
-        formPanes.forEach(pane => {
-            pane.classList.remove('active');
-            if (pane.getAttribute('id') === paneId) {
-                pane.classList.add('active');
-            }
-        });
-    }
-
-    formTabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            switchFormTab(btn.getAttribute('data-form'));
-        });
-    });
+    // --- 7. BOOKING & INQUIRY SEPARATION LOGIC ---
+    // The general inquiry form and booking wizard are now separated into distinct sections,
+    // so tab switching logic is no longer required. All wizard step controls remain active below.
 
     // --- 8. STEP-BY-STEP BOOKING WIZARD ---
     const wizardForm = document.getElementById('wizard-booking-form');
