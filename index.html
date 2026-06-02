@@ -211,53 +211,28 @@
                     </div>
                 </div>
 
-                <!-- Bottom Row: Instagram feed -->
-                <div class="instagram-journey-wrap">
-                    <div class="instagram-journey-header">
-                        <h3 class="instagram-title">FOLLOW OUR JOURNEY <a href="https://instagram.com"
-                                target="_blank">@sbr.photography</a></h3>
-                        <div class="journey-social-links">
-                            <a href="https://instagram.com" target="_blank" class="journey-social-btn"
-                                aria-label="Instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="https://youtube.com" target="_blank" class="journey-social-btn"
-                                aria-label="YouTube">
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="instagram-grid">
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400"
-                                alt="Instagram Post 1">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400"
-                                alt="Instagram Post 2">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=400"
-                                alt="Instagram Post 3">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400"
-                                alt="Instagram Post 4">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=400"
-                                alt="Instagram Post 5">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
-                        <div class="instagram-item">
-                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400"
-                                alt="Instagram Post 6">
-                            <div class="instagram-hover"><i class="fa-brands fa-instagram"></i></div>
-                        </div>
+                <!-- Bottom Row: Follow Our Journey -->
+                <div class="social-journey-wrap">
+                    <h3 class="social-journey-title">Follow Our Journey</h3>
+                    <div class="social-grid-large">
+                        <a href="https://instagram.com" target="_blank" class="social-card" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-card" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-card" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" class="social-card" aria-label="Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-card" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://whatsapp.com" target="_blank" class="social-card" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -407,19 +382,201 @@
     </section>
 
 
-    <!-- 4. CONTACT & 5. BOOK SHOOT SECTION -->
-    <section class="section" id="contact">
+    <!-- 5. BOOK A SHOOT SECTION -->
+    <section class="section booking-section" id="book-shoot">
+        <div class="container">
+            <div class="booking-layout-grid">
+                <!-- Left: Booking Showcase Info -->
+                <div class="booking-info-col">
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <span class="tagline">Reserve Your Session</span>
+                        <h2>Secure Your <span>Shoot Date</span></h2>
+                        <p>Configure your customized session parameters, select date preferences, and establish a custom baseline budget in our premium shoot builder.</p>
+                    </div>
+                    
+                    <div class="booking-guide-panel glass-panel">
+                        <div class="guide-step">
+                            <span class="step-num">01</span>
+                            <div class="step-text">
+                                <h4>Select Core Service</h4>
+                                <p>Choose one or multiple photo/video coverage vaults tailored for your event theme.</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <span class="step-num">02</span>
+                            <div class="step-text">
+                                <h4>Bespoke Budget & Logistics</h4>
+                                <p>Designate date range options and calibrate your personal investment slide scale.</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <span class="step-num">03</span>
+                            <div class="step-text">
+                                <h4>Transmit Handshake</h4>
+                                <p>Our operations lead will review your booking framework and lock the shoot calendar within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: The 3-Step Wizard Form -->
+                <div class="form-card glass-panel booking-wizard-card">
+                    <!-- BOOKING WIZARD FORM -->
+                    <div class="form-pane active" id="booking-pane">
+                        <div class="wizard-steps">
+                            <div class="wizard-step-node active" id="node-1">1</div>
+                            <div class="wizard-step-node" id="node-2">2</div>
+                            <div class="wizard-step-node" id="node-3">3</div>
+                        </div>
+
+                        <form id="wizard-booking-form">
+                            <!-- STEP 1: Shoot Specifications -->
+                            <div class="wizard-step-content active" id="step-1-content">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">Step 1: Shoot Details</h3>
+
+                                <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 12px; font-weight: 600;">Select Services (Select all that apply)</label>
+                                <div class="service-select-grid">
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Wedding" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-ring"></i>
+                                            <span>Wedding</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Pre-Wedding" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-heart"></i>
+                                            <span>Pre-Wedding</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Birthday" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-cake-candles"></i>
+                                            <span>Birthday</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Baby Shoot" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-baby"></i>
+                                            <span>Baby Shoot</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Fashion" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-shirt"></i>
+                                            <span>Fashion</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Portrait" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-user-astronaut"></i>
+                                            <span>Portrait</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Event" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-masks-theater"></i>
+                                            <span>Event</span>
+                                        </div>
+                                    </label>
+                                    <label class="service-check-box">
+                                        <input type="checkbox" name="b-services" value="Film Making" class="service-checkbox-input">
+                                        <div class="service-check-card">
+                                            <i class="fa-solid fa-video"></i>
+                                            <span>Film Making</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-group-row">
+                                    <div class="form-group">
+                                        <label for="b-date">Event Date</label>
+                                        <input type="date" id="b-date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="b-location">Shoot Location</label>
+                                        <input type="text" id="b-location" class="form-control" placeholder="E.g. Manhattan, NY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: Budget & Contact Info -->
+                            <div class="wizard-step-content" id="step-2-content" style="display: none;">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">Step 2: Budget & Coordinates</h3>
+
+                                <div class="form-group">
+                                    <label for="b-budget">Bespoke Budget Slider</label>
+                                    <div class="budget-slider-wrapper">
+                                        <input type="range" id="b-budget" class="range-styled" min="400" max="10000" step="100" value="1500">
+                                        <span class="budget-val-display" id="budget-value">$1,500</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="b-name">Full Name</label>
+                                    <input type="text" id="b-name" class="form-control" placeholder="E.g. Jane Doe">
+                                </div>
+
+                                <div class="form-group-row">
+                                    <div class="form-group">
+                                        <label for="b-phone">Mobile Number</label>
+                                        <input type="tel" id="b-phone" class="form-control" placeholder="E.g. +1 (555) 019-2834">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="b-email">Email Address</label>
+                                        <input type="email" id="b-email" class="form-control" placeholder="E.g. jane@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Special Notes & Final CTA -->
+                            <div class="wizard-step-content" id="step-3-content" style="display: none;">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">Step 3: Review & Personal Touches</h3>
+
+                                <div class="form-group">
+                                    <label for="b-notes">Additional Notes</label>
+                                    <textarea id="b-notes" class="form-control" placeholder="Tell us if you need drone operators, fast-delivery add-ons, physical photobooks..."></textarea>
+                                </div>
+
+                                <div class="glass-panel" style="padding: 20px; text-align: center; border-radius: var(--radius-sm); border-color: rgba(223,183,108,0.2); margin-top: 24px; background: rgba(223, 183, 108, 0.03);">
+                                    <h4 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-gold); margin-bottom: 6px;">"Let's Create Memories Together"</h4>
+                                    <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Click below to transmit your custom package structure. We'll lock the date and get in touch within 24 hours.</p>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Controls -->
+                            <div class="wizard-nav">
+                                <button type="button" class="btn btn-secondary" id="w-prev-btn" style="visibility: hidden;">
+                                    <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary" id="w-next-btn">
+                                    Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT DETAILS & GENERAL INQUIRY SECTION -->
+    <section class="section contact-section" id="contact">
         <div class="container">
             <div class="contact-booking-grid">
-
-                <!-- Left: Contact Details -->
+                <!-- Left: Contact Details (Photographers Info) -->
                 <div class="contact-info-panel">
                     <div>
                         <div class="section-header" style="text-align: left; margin-bottom: 30px;">
                             <span class="tagline">Get In Touch</span>
-                            <h2>Let's Capture <span>Your Story</span></h2>
-                            <p>Have questions about dates, venues, or customizable budgets? Reach out directly via our
-                                official networks.</p>
+                            <h2>Photographers' <span>Coordinates</span></h2>
+                            <p>For bookings, customized quotes, or creative consultations, reach our team directly using our official coordinates.</p>
                         </div>
 
                         <div class="contact-card glass-panel">
@@ -454,53 +611,39 @@
 
                     <!-- Social Networks -->
                     <div class="social-connect">
-                        <h3>Follow Our Journey</h3>
+                        <h3>Connect Digitally</h3>
                         <div class="social-grid">
-                            <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                            <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube"><i
-                                    class="fa-brands fa-youtube"></i></a>
-                            <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i
-                                    class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://pinterest.com" target="_blank" class="social-btn" aria-label="Pinterest"><i
-                                    class="fa-brands fa-pinterest-p"></i></a>
-                            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i
-                                    class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="https://whatsapp.com" target="_blank" class="social-btn" aria-label="WhatsApp"><i
-                                    class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://pinterest.com" target="_blank" class="social-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://whatsapp.com" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Forms Card (Tabbed Contact & Booking Wizard) -->
-                <div class="form-card glass-panel" id="book-shoot">
-                    <div class="form-tabs">
-                        <button class="form-tab-btn active" id="btn-tab-contact" data-form="contact-pane">General
-                            Inquiry</button>
-                        <button class="form-tab-btn" id="btn-tab-book" data-form="booking-pane">Book a Shoot 🚀</button>
-                    </div>
-
+                <!-- Right: General Inquiry Form -->
+                <div class="form-card glass-panel inquiry-form-card">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 25px; color: var(--color-gold);">Send us a Message</h3>
                     <!-- GENERAL CONTACT FORM -->
                     <div class="form-pane active" id="contact-pane">
                         <form id="general-contact-form">
                             <div class="form-group-row">
                                 <div class="form-group">
                                     <label for="c-name">Full Name</label>
-                                    <input type="text" id="c-name" class="form-control" placeholder="E.g. Jane Doe"
-                                        required>
+                                    <input type="text" id="c-name" class="form-control" placeholder="E.g. Jane Doe" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="c-phone">Phone Number</label>
-                                    <input type="tel" id="c-phone" class="form-control"
-                                        placeholder="E.g. +1 (555) 019-2834" required>
+                                    <input type="tel" id="c-phone" class="form-control" placeholder="E.g. +1 (555) 019-2834" required>
                                 </div>
                             </div>
 
                             <div class="form-group-row">
                                 <div class="form-group">
                                     <label for="c-email">Email Address</label>
-                                    <input type="email" id="c-email" class="form-control"
-                                        placeholder="E.g. jane@example.com" required>
+                                    <input type="email" id="c-email" class="form-control" placeholder="E.g. jane@example.com" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="c-event">Event Type</label>
@@ -525,183 +668,12 @@
 
                             <div class="form-group">
                                 <label for="c-message">Your Message</label>
-                                <textarea id="c-message" class="form-control"
-                                    placeholder="Tell us about your creative vision..." required></textarea>
+                                <textarea id="c-message" class="form-control" placeholder="Tell us about your creative vision..." required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary" style="width: 100%;">
                                 Send Inquiry <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i>
                             </button>
-                        </form>
-                    </div>
-
-                    <!-- BOOKING WIZARD FORM -->
-                    <div class="form-pane" id="booking-pane">
-                        <div class="wizard-steps">
-                            <div class="wizard-step-node active" id="node-1">1</div>
-                            <div class="wizard-step-node" id="node-2">2</div>
-                            <div class="wizard-step-node" id="node-3">3</div>
-                        </div>
-
-                        <form id="wizard-booking-form">
-                            <!-- STEP 1: Shoot Specifications -->
-                            <div class="wizard-step-content active" id="step-1-content">
-                                <h3
-                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
-                                    Step 1: Shoot Details</h3>
-
-                                <label
-                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 12px; font-weight: 600;">
-                                    Select Services (Select all that apply)
-                                </label>
-                                <div class="service-select-grid">
-                                    <!-- Service Checkboxes -->
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Wedding"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-ring"></i>
-                                            <span>Wedding</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Pre-Wedding"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-heart"></i>
-                                            <span>Pre-Wedding</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Birthday"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-cake-candles"></i>
-                                            <span>Birthday</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Baby Shoot"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-baby"></i>
-                                            <span>Baby Shoot</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Fashion"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-shirt"></i>
-                                            <span>Fashion</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Portrait"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-user-astronaut"></i>
-                                            <span>Portrait</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Event"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-masks-theater"></i>
-                                            <span>Event</span>
-                                        </div>
-                                    </label>
-                                    <label class="service-check-box">
-                                        <input type="checkbox" name="b-services" value="Film Making"
-                                            class="service-checkbox-input">
-                                        <div class="service-check-card">
-                                            <i class="fa-solid fa-video"></i>
-                                            <span>Film Making</span>
-                                        </div>
-                                    </label>
-                                </div>
-
-                                <div class="form-group-row">
-                                    <div class="form-group">
-                                        <label for="b-date">Event Date</label>
-                                        <input type="date" id="b-date" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="b-location">Shoot Location</label>
-                                        <input type="text" id="b-location" class="form-control"
-                                            placeholder="E.g. Manhattan, NY">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- STEP 2: Budget & Contact Info -->
-                            <div class="wizard-step-content" id="step-2-content" style="display: none;">
-                                <h3
-                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
-                                    Step 2: Budget & Coordinates</h3>
-
-                                <div class="form-group">
-                                    <label for="b-budget">Bespoke Budget Slider</label>
-                                    <div class="budget-slider-wrapper">
-                                        <input type="range" id="b-budget" class="range-styled" min="400" max="10000"
-                                            step="100" value="1500">
-                                        <span class="budget-val-display" id="budget-value">$1,500</span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="b-name">Full Name</label>
-                                    <input type="text" id="b-name" class="form-control" placeholder="E.g. Jane Doe">
-                                </div>
-
-                                <div class="form-group-row">
-                                    <div class="form-group">
-                                        <label for="b-phone">Mobile Number</label>
-                                        <input type="tel" id="b-phone" class="form-control"
-                                            placeholder="E.g. +1 (555) 019-2834">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="b-email">Email Address</label>
-                                        <input type="email" id="b-email" class="form-control"
-                                            placeholder="E.g. jane@example.com">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- STEP 3: Special Notes & Final CTA -->
-                            <div class="wizard-step-content" id="step-3-content" style="display: none;">
-                                <h3
-                                    style="font-size: 1.25rem; margin-bottom: 20px; font-family: var(--font-body); font-weight: 700;">
-                                    Step 3: Review & Personal Touches</h3>
-
-                                <div class="form-group">
-                                    <label for="b-notes">Additional Notes</label>
-                                    <textarea id="b-notes" class="form-control"
-                                        placeholder="Tell us if you need drone operators, fast-delivery add-ons, physical photobooks..."></textarea>
-                                </div>
-
-                                <div class="glass-panel"
-                                    style="padding: 20px; text-align: center; border-radius: var(--radius-sm); border-color: rgba(223,183,108,0.2); margin-top: 24px; background: rgba(223, 183, 108, 0.03);">
-                                    <h4
-                                        style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-gold); margin-bottom: 6px;">
-                                        "Let's Create Memories Together"</h4>
-                                    <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Click below to
-                                        transmit your custom package structure. We'll lock the date and get in touch
-                                        within 24 hours.</p>
-                                </div>
-                            </div>
-
-                            <!-- Navigation Controls -->
-                            <div class="wizard-nav">
-                                <button type="button" class="btn btn-secondary" id="w-prev-btn"
-                                    style="visibility: hidden;">
-                                    <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back
-                                </button>
-                                <button type="button" class="btn btn-primary" id="w-next-btn">
-                                    Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-                                </button>
-                            </div>
                         </form>
                     </div>
                 </div>
