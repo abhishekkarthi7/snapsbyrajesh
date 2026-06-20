@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNAPS BY RAJESH</title>
+    <title>SNAPS BY RAJESH | BABIES PARADISE</title>
     <!-- Meta Descriptions for SEO -->
     <meta name="description"
         content="Welcome to SBR PHOTO. Capturing your timeless moments through fine art luxury weddings, dramatic portraits, high-energy events, and cinematic storytelling films. Book your bespoke shoot today.">
@@ -13,46 +13,31 @@
     <meta name="author" content="SBR PHOTO Studio">
 
     <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Pinyon+Script&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="style.css?v=6.0">
 </head>
 
 <body>
 
     <!-- Header Navigation -->
     <header id="main-header">
-        <!-- 1. Default Tall Centered Header (Desktop only) -->
         <div class="nav-container-centered">
-            <a href="#home" class="logo-centered">
-                <span class="logo-main-centered">SNAPS BY RAJESH</span>
-                <span class="logo-sub-centered">Photography</span>
+            <a href="#home" class="logo-centered double-logo-wrapper">
+                <img src="assets/SnapsByRajesh1.png" alt="Snaps By Rajesh Logo" class="logo-left-img">
+                <div class="logo-separator"></div>
+                <img src="assets/Artboard 1.png" alt="Babies Paradise Logo" class="logo-right-img">
             </a>
-            <ul class="nav-links-centered">
+            <ul class="nav-links-centered" id="nav-menu">
                 <li><a href="#home" class="nav-link active">HOME</a></li>
                 <li><a href="#about" class="nav-link">ABOUT</a></li>
                 <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
-        </div>
-
-        <!-- 2. Compact Sticky Header (Fades/Slides in on scroll) -->
-        <div class="nav-container-sticky">
-            <a href="#home" class="logo-sticky">
-                <span class="logo-main-sticky">SNAPS BY RAJESH</span>
-                <span class="logo-sub-sticky">Photography</span>
-            </a>
-
-            <ul class="nav-links-sticky" id="nav-menu">
-                <li><a href="#home" class="nav-link active">HOME</a></li>
-                <li><a href="#about" class="nav-link">ABOUT</a></li>
-                <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
-                <li><a href="#contact" class="nav-link">CONTACT</a></li>
-            </ul>
-
-            <div class="header-cta-sticky">
-                <a href="#book-shoot" class="btn-header-cta trigger-booking">BOOK A SHOOT</a>
-            </div>
-
             <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
                 <span></span>
                 <span></span>
@@ -99,7 +84,7 @@
         <div class="hero-container-split">
             <!-- Left Column: Typography & Actions -->
             <div class="hero-text-col">
-                <h1 class="hero-title">CAPTURING MOMENTS<br><span class="cursive-text">Creating Memories</span></h1>
+                <h1 class="hero-title">Capturing Moments<br><span class="cursive-text">Creating Memories</span></h1>
                 <p class="hero-subcategories">WEDDINGS &bull; PORTRAITS &bull; EVENTS &bull; FILMS</p>
                 <div class="hero-actions">
                     <a href="#portfolio" class="btn btn-hero-solid">VIEW PORTFOLIO</a>
@@ -112,23 +97,22 @@
                 <div class="hero-showcase-card">
                     <!-- Slide 1: Bride Smiling (Wedding) -->
                     <div class="hero-card-slide active">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800"
-                            alt="Wedding Couple Embrace" class="hero-card-fallback-img">
+                        <img src="assets/scrolling pictures/1.jpg" alt="Wedding Couple Embrace"
+                            class="hero-card-fallback-img">
                     </div>
                     <!-- Slide 2: Couple Holding Hands (Pre-wedding) -->
                     <div class="hero-card-slide">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800"
-                            alt="Couple Intimacy" class="hero-card-fallback-img">
+                        <img src="assets/scrolling pictures/2.jpg" alt="Couple Intimacy" class="hero-card-fallback-img">
                     </div>
                     <!-- Slide 3: Birthday Celebrations -->
                     <div class="hero-card-slide">
-                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800"
-                            alt="Birthday Celebrations" class="hero-card-fallback-img">
+                        <img src="assets/scrolling pictures/3.jpg" alt="Birthday Celebrations"
+                            class="hero-card-fallback-img">
                     </div>
                     <!-- Slide 4: Drone Landscape / Scenic -->
                     <div class="hero-card-slide">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800"
-                            alt="Drone Scenic Shot" class="hero-card-fallback-img">
+                        <img src="assets/scrolling pictures/4.jpg" alt="Drone Scenic Shot"
+                            class="hero-card-fallback-img">
                     </div>
                 </div>
             </div>
@@ -144,13 +128,15 @@
                 <div class="bio-img-col">
                     <div class="bio-img-wrapper">
                         <!-- Automatically transitioning photographer images -->
-                        <img src="assets/photographer.png"
-                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=800';"
+                        <img src="assets/photographers/1.jpg"
+                            onerror="this.onerror=null; this.src='assets/photographer.png';"
                             alt="SBR Rajesh Lead Photographer" class="bio-portrait-img active">
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800"
-                            alt="SBR Rajesh Capturing Shots" class="bio-portrait-img">
-                        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=800"
-                            alt="SBR Rajesh Creative Studio" class="bio-portrait-img">
+                        <img src="assets/photographers/2.jpg"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800';"
+                            alt="SBR Arun Partner Photographer" class="bio-portrait-img">
+                        <img src="assets/photographers/3.jpg"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=800';"
+                            alt="SBR Creative Studio" class="bio-portrait-img">
                     </div>
                 </div>
 
@@ -162,11 +148,14 @@
                         <div class="bio-story-wrap">
                             <span class="tagline">BEHIND THE LENS</span>
                             <h2 class="bio-title">Meet the <span>Brothers</span></h2>
-                            <p class="bio-text">We are two brothers united by a shared passion for visual storytelling. With
-                                one behind the lens capturing raw, authentic emotions, and the other directing the cinematic
-                                flow, we bring your timeless moments to life. For us, every picture has a story to tell, and
+                            <p class="bio-text">We are two brothers united by a shared passion for visual storytelling.
+                                With
+                                one behind the lens capturing raw, authentic emotions, and the other directing the
+                                cinematic
+                                flow, we bring your timeless moments to life. For us, every picture has a story to tell,
+                                and
                                 we are here to preserve yours beautifully.</p>
-                            <div class="bio-signature">Rajesh & Team</div>
+                            <div class="bio-signature">Rajesh & Arun </div>
 
                             <!-- SIGNATURE APPROACH BLOCK (Replaces Testimonials) -->
                             <div class="signature-approach-wrap">
@@ -216,19 +205,19 @@
                     <div class="social-journey-wrap">
                         <h3 class="social-journey-title">FOLLOW OUR <span>JOURNEY</span></h3>
                         <div class="social-grid-large">
-                            <a href="https://instagram.com" target="_blank" class="social-card" aria-label="Instagram">
+                            <!-- EXAMPLE: Replace 'sbr_photo_studio' with your Instagram username -->
+                            <a href="https://instagram.com/snaps_by_rajesh" target="_blank" class="social-card"
+                                aria-label="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="https://youtube.com" target="_blank" class="social-card" aria-label="YouTube">
+                            <!-- EXAMPLE: Replace '@sbr_photo' with your YouTube channel handle -->
+                            <a href="https://youtube.com/@snapsbyrajesh" target="_blank" class="social-card"
+                                aria-label="YouTube">
                                 <i class="fa-brands fa-youtube"></i>
                             </a>
-                            <a href="https://facebook.com" target="_blank" class="social-card" aria-label="Facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                            <a href="https://linkedin.com" target="_blank" class="social-card" aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://whatsapp.com" target="_blank" class="social-card" aria-label="WhatsApp">
+                            <!-- EXAMPLE: Replace '919876543210' with your country code + phone number (e.g., 91 for India, 9876543210 is phone number) -->
+                            <a href="https://wa.me/919347071994" target="_blank" class="social-card"
+                                aria-label="WhatsApp">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
@@ -252,11 +241,11 @@
             <!-- Gallery Grid Elements (Exactly 8 Cards with Round Arrow Buttons) -->
             <div class="gallery-grid" id="gallery-container">
                 <!-- Item 1: Hindu Wedding -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800,https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=800,https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800,https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800,https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800"
+                <div class="gallery-item"
+                    data-images="assets/hindu_wedding/1.jpg,assets/hindu_wedding/2.jpg,assets/hindu_wedding/3.jpg,assets/hindu_wedding/4.jpg,assets/hindu_wedding/5.jpg"
                     data-title="HINDU WEDDING"
                     data-desc="Traditional Hindu wedding ceremony filled with vibrant rituals, colors, and raw emotions.">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600"
-                        alt="Hindu Wedding" class="gallery-img">
+                    <img src="assets/hindu_wedding/cover.jpg" alt="Hindu Wedding" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
                             <h4>HINDU WEDDING</h4>
@@ -269,11 +258,11 @@
                 </div>
 
                 <!-- Item 2: Christian Wedding -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800,https://images.unsplash.com/photo-1507504038482-7621c37b3f9d?q=80&w=800,https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800,https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800,https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800"
+                <div class="gallery-item"
+                    data-images="assets/christian_wedding/1.jpg,assets/christian_wedding/2.jpg,assets/christian_wedding/3.jpg,assets/christian_wedding/4.jpg,assets/christian_wedding/5.jpg"
                     data-title="CHRISTIAN WEDDING"
                     data-desc="Elegant Christian wedding service capturing pure vows, the white gown, and classic romance.">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600"
-                        alt="Christian Wedding" class="gallery-img">
+                    <img src="assets/christian_wedding/cover.jpg" alt="Christian Wedding" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
                             <h4>CHRISTIAN WEDDING</h4>
@@ -286,11 +275,11 @@
                 </div>
 
                 <!-- Item 3: Pre-wedding Shoot -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800,https://images.unsplash.com/photo-1507504038482-7621c37b3f9d?q=80&w=800,https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800,https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800,https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800"
+                <div class="gallery-item"
+                    data-images="assets/pre_wedding/1.jpg,assets/pre_wedding/2.jpg,assets/pre_wedding/3.jpg,assets/pre_wedding/4.jpg,assets/pre_wedding/5.jpg"
                     data-title="PRE-WEDDING SHOOT"
                     data-desc="A dreamy morning pre-wedding session capturing raw intimate glances.">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600"
-                        alt="Pre-Wedding Shoot" class="gallery-img">
+                    <img src="assets/pre_wedding/cover.jpg" alt="Pre-Wedding Shoot" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
                             <h4>PRE-WEDDING SHOOT</h4>
@@ -303,11 +292,11 @@
                 </div>
 
                 <!-- Item 4: Birthday Celebration -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800,https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800,https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=800,https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800,https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=800"
+                <div class="gallery-item"
+                    data-images="assets/birthday/1.jpg,assets/birthday/2.jpg,assets/birthday/3.jpg,assets/birthday/4.jpg,assets/birthday/5.jpg"
                     data-title="BIRTHDAY CELEBRATION"
                     data-desc="A stylish 25th birthday close-up, highlighting sparkles and dynamic lens flares.">
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=600"
-                        alt="Birthday Celebration" class="gallery-img">
+                    <img src="assets/birthday/cover.jpg" alt="Birthday Celebration" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
                             <h4>BIRTHDAY CELEBRATION</h4>
@@ -320,14 +309,14 @@
                 </div>
 
                 <!-- Item 5: Candid Portrait -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800,https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800,https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800,https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800"
-                    data-title="CANDID PORTRAIT"
+                <div class="gallery-item"
+                    data-images="assets/portrait/1.jpg,assets/portrait/2.jpg,assets/portrait/3.jpg,assets/portrait/4.jpg,assets/portrait/5.jpg"
+                    data-title="PORTRAITS"
                     data-desc="High-fashion studio portrait highlighting delicate textures, contrast, and dramatic lighting.">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600"
-                        alt="Candid Portrait" class="gallery-img">
+                    <img src="assets/portrait/cover.jpg" alt="Candid Portrait" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
-                            <h4>CANDID PORTRAIT</h4>
+                            <h4>PORTRAITS</h4>
                             <div class="learn-more-action">
                                 <span>LEARN MORE</span>
                                 <div class="round-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
@@ -336,15 +325,15 @@
                     </div>
                 </div>
 
-                <!-- Item 6: Baby Photoshoot -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800,https://images.unsplash.com/photo-1519689680058-324335c77eb2?q=80&w=800,https://images.unsplash.com/photo-1472245594228-92093ba772ee?q=80&w=800,https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800,https://images.unsplash.com/photo-1515488042361-404e9250afef?q=80&w=800"
-                    data-title="BABY PHOTOSHOOT"
-                    data-desc="Candid, heart-warming baby photoshoot focusing on natural laughter and soft tones.">
-                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600"
-                        alt="Baby Photoshoot" class="gallery-img">
+                <!-- Item 6: Babies Paradise -->
+                <div class="gallery-item"
+                    data-images="assets/babies/1.jpg,assets/babies/2.jpg,assets/babies/3.jpg,assets/babies/4.jpg,assets/babies/5.jpg"
+                    data-title="BABIES PARADISE"
+                    data-desc="Pure love. Pure moments. Elegant and premium photography for your little ones.">
+                    <img src="assets/babies/cover.jpg" alt="Babies Paradise" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
-                            <h4>BABY PHOTOSHOOT</h4>
+                            <h4>BABIES PARADISE</h4>
                             <div class="learn-more-action">
                                 <span>LEARN MORE</span>
                                 <div class="round-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
@@ -353,15 +342,15 @@
                     </div>
                 </div>
 
-                <!-- Item 7: Cinematic Film -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=800,https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800,https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800,https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=800,https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"
-                    data-title="CINEMATIC FILM"
+                <!-- Item 7: Engagement -->
+                <div class="gallery-item"
+                    data-images="assets/engagement/1.jpg,assets/engagement/2.jpg,assets/engagement/3.jpg,assets/engagement/4.jpg,assets/engagement/5.jpg"
+                    data-title="ENGAGEMENT"
                     data-desc="Scenic pre-wedding silhouette against a spectacular dusk sky in the mountains.">
-                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600"
-                        alt="Cinematic Film" class="gallery-img">
+                    <img src="assets/engagement/cover.jpg" alt="Engagement Shoot" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
-                            <h4>CINEMATIC FILM</h4>
+                            <h4>ENGAGEMENT</h4>
                             <div class="learn-more-action">
                                 <span>LEARN MORE</span>
                                 <div class="round-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
@@ -370,15 +359,15 @@
                     </div>
                 </div>
 
-                <!-- Item 8: Fashion Shoot -->
-                <div class="gallery-item" data-images="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800,https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800,https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800,https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800,https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800"
-                    data-title="FASHION SHOOT"
+                <!-- Item 8: Maternity Shoot -->
+                <div class="gallery-item"
+                    data-images="assets/maternity/1.jpg,assets/maternity/2.jpg,assets/maternity/3.jpg,assets/maternity/4.jpg,assets/maternity/5.jpg"
+                    data-title="MATERNITY"
                     data-desc="Capturing the dynamic energy, key speakers, and atmospheric details of high-profile events.">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600"
-                        alt="Fashion Shoot" class="gallery-img">
+                    <img src="assets/maternity/cover.jpg" alt="Maternity Shoot" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
-                            <h4>FASHION SHOOT</h4>
+                            <h4>MATERNITY</h4>
                             <div class="learn-more-action">
                                 <span>LEARN MORE</span>
                                 <div class="round-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
@@ -397,33 +386,33 @@
                 <!-- Left: Contact Details (Photographers Info) -->
                 <div class="contact-info-panel">
                     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-                        <span class="tagline">GET IN TOUCH</span>
-                        <h2>PHOTOGRAPHERS' <span>COORDINATES</span></h2>
-                        <p>FOR BOOKINGS, CUSTOMIZED QUOTES, OR CREATIVE CONSULTATIONS, REACH OUR TEAM DIRECTLY USING OUR OFFICIAL COORDINATES.</p>
+                        <span class="tagline">Get In Touch</span>
+                        <h2>Photomakers</h2>
+                        <p>For bookings, customized quotes, or creative consultations, reach our team directly using our
+                            official coordinates.</p>
                     </div>
-                    
+
                     <div class="contact-card glass-panel">
                         <div class="contact-item">
                             <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="contact-item-details">
-                                <h4>PHONE DETAILS</h4>
-                                <p><a href="tel:+919876543210">+91 98765 43210</a> (RAJESH)</p>
-                                <p><a href="tel:+919999988888">+91 99999 88888</a> (ARUN & TEAM)</p>
+                                <h4>Phone Details</h4>
+                                <p><a href="tel:+919347071994">+91 93470 71994</a> - Rajesh</p>
+                                <p><a href="tel:+916300752323">+91 63007 52323</a> - Arun</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="contact-item-details">
-                                <h4>EMAIL ENQUIRIES</h4>
-                                <p><a href="mailto:info@sbrphoto.com">INFO@SBRPHOTO.COM</a></p>
-                                <p><a href="mailto:rajesh@sbrphoto.com">RAJESH@SBRPHOTO.COM</a></p>
+                                <h4>Email Enquiries</h4>
+                                <p><a href="mailto:snapsbyrajesh@gmail.com">snapsbyrajesh@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-item-icon"><i class="fa-solid fa-map-location-dot"></i></div>
                             <div class="contact-item-details">
-                                <h4>CREATIVE STUDIO</h4>
-                                <p>12/B, LUXURY DISTRICT, HYDERABAD & BANGALORE, INDIA</p>
+                                <h4>Creative Studio</h4>
+                                <p>Burugupudi , Rajahmundry , Andhra Pradesh</p>
                             </div>
                         </div>
                     </div>
@@ -432,27 +421,30 @@
                 <!-- Right: General Inquiry Form -->
                 <div class="form-card glass-panel">
                     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-                        <span class="tagline">GENERAL INQUIRIES</span>
-                        <h3>DROP US A <span>MESSAGE</span></h3>
+                        <span class="tagline">General Inquiries</span>
                     </div>
                     <form id="general-contact-form">
                         <div class="form-group">
-                            <label for="c-name">FULL NAME</label>
-                            <input type="text" id="c-name" class="form-control" placeholder="ENTER YOUR FULL NAME" required>
+                            <label for="c-name">Full Name</label>
+                            <input type="text" id="c-name" class="form-control" placeholder="Enter Your Full Name"
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="c-email">EMAIL ADDRESS</label>
-                            <input type="email" id="c-email" class="form-control" placeholder="ENTER YOUR EMAIL ADDRESS" required>
+                            <label for="c-email">Email Address</label>
+                            <input type="email" id="c-email" class="form-control" placeholder="Enter Your Email Address"
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="c-subject">SUBJECT</label>
-                            <input type="text" id="c-subject" class="form-control" placeholder="ENTER TOPIC OF INTEREST" required>
+                            <label for="c-subject">Subject</label>
+                            <input type="text" id="c-subject" class="form-control" placeholder="Enter Topic of Interest"
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="c-message">MESSAGE</label>
-                            <textarea id="c-message" class="form-control" placeholder="WRITE YOUR DETAILED INQUIRY HERE..." required></textarea>
+                            <label for="c-message">Message</label>
+                            <textarea id="c-message" class="form-control"
+                                placeholder="Write your detailed inquiry here..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -474,16 +466,19 @@
         <div class="container footer-container-grid">
             <!-- Col 1: Studio Story -->
             <div class="footer-col">
-                <a href="#home" class="logo-sticky" style="margin-bottom: 20px; display: inline-flex;">
-                    <span class="logo-main-sticky">SNAPS BY RAJESH</span>
-                    <span class="logo-sub-sticky">PHOTOGRAPHY</span>
+                <a href="#home" class="logo-sticky double-logo-wrapper footer-version"
+                    style="margin-bottom: 20px; display: inline-flex;">
+                    <img src="assets/SnapsByRajesh1.png" alt="Snaps By Rajesh Logo" class="logo-left-img">
+                    <div class="logo-separator"></div>
+                    <img src="assets/Artboard 1.png" alt="Babies Paradise Logo" class="logo-right-img">
                 </a>
-                <p class="footer-about-text">WE RECORD RAW, CANDID MOMENTS AND TRANSFORM THEM INTO CINEMATIC ARTWORKS. EVERY FRAME CAPTURED CONTAINS A TIMELESS CHRONICLE OF EMOTION.</p>
+                <p class="footer-about-text">We record raw, candid moments and transform them into cinematic artworks.
+                    Every frame captured contains a timeless chronicle of emotion.</p>
             </div>
-            
+
             <!-- Col 2: Navigation Links -->
             <div class="footer-col">
-                <h4>NAVIGATION</h4>
+                <h4>Navigation</h4>
                 <ul class="footer-links-list">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
@@ -491,34 +486,52 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </div>
-            
+
             <!-- Col 3: Coordinates -->
             <div class="footer-col">
-                <h4>COORDINATES</h4>
-                <p>PHONE: +91 98765 43210</p>
-                <p>EMAIL: INFO@SBRPHOTO.COM</p>
-                <p>STUDIO: HYDERABAD & BANGALORE</p>
+                <h4>Coordinates</h4>
+                <div class="coordinate-item">
+                    <span class="coordinate-label"><i class="fa-solid fa-phone"></i> Phone</span>
+                    <span class="coordinate-value">
+                        <a href="tel:+919347071994">+91 93470 71994</a> - Rajesh<br>
+                        <a href="tel:+916300752323">+91 63007 52323</a> - Arun
+                    </span>
+                </div>
+                <div class="coordinate-item">
+                    <span class="coordinate-label"><i class="fa-solid fa-envelope"></i> Email</span>
+                    <span class="coordinate-value"><a
+                            href="mailto:snapsbyrajesh@gmail.com">snapsbyrajesh@gmail.com</a></span>
+                </div>
+                <div class="coordinate-item">
+                    <span class="coordinate-label"><i class="fa-solid fa-map-location-dot"></i> Studio</span>
+                    <span class="coordinate-value">Burugupudi, Rajahmundry, Andhra Pradesh, India</span>
+                </div>
             </div>
-            
+
             <!-- Col 4: Quick Trigger -->
             <div class="footer-col">
-                <h4>BOOKINGS</h4>
-                <p style="margin-bottom: 20px;">READY TO SECURE YOUR SHOOT DATE?</p>
-                <a href="#book-shoot" class="btn btn-primary trigger-booking" style="padding: 10px 20px; font-size: 0.8rem;">BOOK A SHOOT</a>
+                <h4>Bookings</h4>
+                <p style="margin-bottom: 20px;">Ready to secure your shoot date?</p>
+                <a href="#book-shoot" class="btn btn-primary trigger-booking"
+                    style="padding: 10px 20px; font-size: 0.8rem;">BOOK A SHOOT NOW</a>
             </div>
         </div>
-        
+
         <div class="footer-bottom-bar">
             <div class="container footer-bottom-container">
                 <div class="footer-copy">
                     &copy; 2026 <span>SBR PHOTO</span>. ALL RIGHTS RESERVED.
                 </div>
                 <div class="footer-social-icons">
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <!-- EXAMPLE: Replace 'snaps_by_rajesh' with your Instagram username -->
+                    <a href="https://instagram.com/snaps_by_rajesh" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <!-- EXAMPLE: Replace '@snapsbyrajesh' with your YouTube channel handle -->
+                    <a href="https://youtube.com/@snapsbyrajesh" target="_blank" aria-label="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <!-- EXAMPLE: Replace '919347071994' with your country code + phone number -->
+                    <a href="https://wa.me/919347071994" target="_blank" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -531,7 +544,7 @@
         <div class="lightbox-content">
             <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image"><i
                     class="fa-solid fa-chevron-left"></i></button>
-            
+
             <div class="lightbox-gallery-container">
                 <div class="lightbox-featured-wrap">
                     <img src="" alt="" class="lightbox-featured-img" id="lightbox-img">
@@ -552,19 +565,19 @@
     </div>
 
     <!-- Interactive Script -->
-    <script src="app.js?v=4.0"></script>
+    <script src="app.js?v=9.0"></script>
 
     <!-- Slide-Up Booking Modal Overlay (Simplified 2-Step Form) -->
     <div class="booking-modal-overlay" id="booking-modal-overlay">
         <div class="booking-modal-container">
             <button class="booking-close-btn" id="booking-close-btn">&times;</button>
-            
+
             <div class="form-card-modal booking-wizard-card">
                 <div class="section-header" style="margin-bottom: 24px;">
                     <span class="tagline">PREMIUM SHOOT BUILDER</span>
                     <h3 style="color: #070709; font-size: 2rem;">BOOK A <span>SHOOT</span></h3>
                 </div>
-                
+
                 <div class="wizard-steps">
                     <div class="wizard-step-node active" id="node-1">1</div>
                     <div class="wizard-step-node" id="node-2">2</div>
@@ -606,7 +619,7 @@
                                 </label>
                             </div>
                         </div>
-                        
+
                         <div class="form-group-row">
                             <div class="form-group">
                                 <label for="b-date">PROPOSED DATE</label>
@@ -614,7 +627,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="b-location">PROPOSED LOCATION</label>
-                                <input type="text" id="b-location" class="form-control" placeholder="ENTER EVENT LOCATION (E.G. TUSCANY, ITALY)">
+                                <input type="text" id="b-location" class="form-control"
+                                    placeholder="ENTER EVENT LOCATION (E.G. TUSCANY, ITALY)">
                             </div>
                         </div>
                     </div>

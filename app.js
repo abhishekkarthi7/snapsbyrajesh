@@ -523,9 +523,14 @@ THANK YOU!`;
         // URL encode the message
         const encodedMessage = encodeURIComponent(message);
         
-        // WhatsApp Phone Number (Rajesh & Team number: e.g. +91 98765 43210 -> 919876543210)
-        // You can change this number below to your exact WhatsApp number!
-        const whatsappNumber = "919876543210"; 
+        // =========================================================================
+        // USER CONFIGURATION: WHATSAPP PHONE NUMBER
+        // =========================================================================
+        // This is the phone number where WhatsApp booking requests are sent.
+        // Format: [Country Code][Number] without spaces or '+' (e.g. 919347071994).
+        // Change the number inside the quotes below to your exact WhatsApp number!
+        const whatsappNumber = "919347071994"; 
+        // ========================================================================= 
 
         setTimeout(() => {
             if (wizardForm) wizardForm.reset();
@@ -548,11 +553,24 @@ THANK YOU!`;
             e.preventDefault();
 
             const name = document.getElementById('c-name').value.trim();
-            showToast("Transmitting inquiry message...", "fa-paper-plane");
+            const email = document.getElementById('c-email').value.trim();
+            const subject = document.getElementById('c-subject').value.trim();
+            const message = document.getElementById('c-message').value.trim();
+
+            showToast("Opening mail client...", "fa-paper-plane");
 
             setTimeout(() => {
                 contactForm.reset();
-                showToast(`Thank you ${name}! Your inquiry has been received.`, "fa-circle-check");
+
+                const recipient = "snapsbyrajesh@gmail.com";
+                const mailtoSubject = encodeURIComponent(subject);
+                const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                const mailtoUrl = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+                // Redirect to system's mail client (e.g. Gmail/Outlook)
+                window.location.href = mailtoUrl;
+
+                showToast(`Redirected to mail client!`, "fa-circle-check");
             }, 1200);
         });
     }
