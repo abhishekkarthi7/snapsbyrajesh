@@ -303,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Attach event listeners to gallery items for Learn More clicks
-    const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {
         const learnMoreBtn = item.querySelector('.learn-more-action');
         if (learnMoreBtn) {

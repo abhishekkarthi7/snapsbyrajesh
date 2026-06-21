@@ -1483,7 +1483,7 @@ header.scrolled .nav-links-centered {
 }
 
 .contact-section,
-.contact-section * {
+.contact-section *:not(i) {
     font-family: 'Quicksand', sans-serif !important;
 }
 
@@ -2547,6 +2547,9 @@ footer {
     .slider-container { max-width: 500px; margin: 0 auto; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-booking-grid { grid-template-columns: 1fr; }
+    .contact-section h2 { font-size: 2.2rem !important; }
+    .contact-card.glass-panel,
+    .contact-section .form-card.glass-panel { padding: 24px 20px !important; }
     .social-grid { grid-template-columns: repeat(6, 1fr); }
     
     .bio-container { grid-template-columns: 1fr; gap: 40px; }
@@ -2729,8 +2732,8 @@ footer {
         height: 200px !important;
         margin-top: -80px !important;
         margin-bottom: -80px !important;
-        margin-left: -28px !important;
-        margin-right: -26px !important;
+        margin-left: -12px !important;
+        margin-right: -12px !important;
         position: relative;
         top: 1px !important;
     }
@@ -2805,6 +2808,13 @@ footer {
         width: 50px;
         height: 50px;
     }
+    .coordinate-item {
+        align-items: center;
+        text-align: center;
+    }
+    .coordinate-label {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2868,8 +2878,8 @@ footer {
         height: 150px !important;
         margin-top: -60px !important;
         margin-bottom: -60px !important;
-        margin-left: -21px !important;
-        margin-right: -20px !important;
+        margin-left: -8px !important;
+        margin-right: -8px !important;
         position: relative;
         top: 1px !important;
     }
@@ -2890,5 +2900,8 @@ footer {
         font-size: 0.35rem !important;
         letter-spacing: 0.06em !important;
         margin-top: 1px !important;
+    }
+    .contact-section h2 {
+        font-size: 1.8rem !important;
     }
 }
