@@ -193,6 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(cycleBioImages, bioImgInterval);
     }
 
+    // --- 4.5 GALLERY FILTERING SYSTEM ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (filterBtns.length > 0 && galleryItems.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || itemCategory === filterValue) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
     // --- 5. PORTFOLIO "LEARN MORE" & DYNAMIC LIGHTBOX ---
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');

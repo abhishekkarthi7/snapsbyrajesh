@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SNAPS BY RAJESH | BABIES PARADISE</title>
     <!-- Meta Descriptions for SEO -->
     <meta name="description"
@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Pinyon+Script&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=6.0">
+    <link rel="stylesheet" href="style.css?v=6.1">
 </head>
 
 <body>
@@ -33,10 +33,18 @@
                 <img src="assets/Artboard 1.png" alt="Babies Paradise Logo" class="logo-right-img">
             </a>
             <ul class="nav-links-centered" id="nav-menu">
+                <li class="mobile-only mobile-menu-header">
+                    <img src="assets/SnapsByRajesh1.png" alt="SBR Logo" class="mobile-menu-logo">
+                </li>
                 <li><a href="#home" class="nav-link active">HOME</a></li>
                 <li><a href="#about" class="nav-link">ABOUT</a></li>
                 <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                <li class="mobile-only mobile-menu-socials">
+                    <a href="https://instagram.com/snaps_by_rajesh" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@snapsbyrajesh" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/919347071994" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
             </ul>
             <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
                 <span></span>
@@ -131,12 +139,9 @@
                         <img src="assets/photographers/1.jpg"
                             onerror="this.onerror=null; this.src='assets/photographer.png';"
                             alt="SBR Rajesh Lead Photographer" class="bio-portrait-img active">
-                        <img src="assets/photographers/2.jpg"
-                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800';"
-                            alt="SBR Arun Partner Photographer" class="bio-portrait-img">
                         <img src="assets/photographers/3.jpg"
-                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=800';"
-                            alt="SBR Creative Studio" class="bio-portrait-img">
+                            onerror="this.onerror=null; this.src='assets/photographer.png';"
+                            alt="SBR Rajesh & Arun" class="bio-portrait-img">
                     </div>
                 </div>
 
@@ -238,10 +243,19 @@
                 <h2>THE <span>GALLERY</span></h2>
             </div>
 
+            <!-- Gallery Filters Row -->
+            <div class="gallery-filters" id="gallery-filters">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="wedding">WEDDINGS</button>
+                <button class="filter-btn" data-filter="portrait">PORTRAITS</button>
+                <button class="filter-btn" data-filter="babies">BABIES</button>
+                <button class="filter-btn" data-filter="birthday">EVENTS</button>
+            </div>
+
             <!-- Gallery Grid Elements (Exactly 8 Cards with Round Arrow Buttons) -->
             <div class="gallery-grid" id="gallery-container">
                 <!-- Item 1: Hindu Wedding -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="wedding"
                     data-images="assets/hindu_wedding/1.jpg,assets/hindu_wedding/2.jpg,assets/hindu_wedding/3.jpg,assets/hindu_wedding/4.jpg,assets/hindu_wedding/5.jpg"
                     data-title="HINDU WEDDING"
                     data-desc="Traditional Hindu wedding ceremony filled with vibrant rituals, colors, and raw emotions.">
@@ -258,7 +272,7 @@
                 </div>
 
                 <!-- Item 2: Christian Wedding -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="wedding"
                     data-images="assets/christian_wedding/1.jpg,assets/christian_wedding/2.jpg,assets/christian_wedding/3.jpg,assets/christian_wedding/4.jpg,assets/christian_wedding/5.jpg"
                     data-title="CHRISTIAN WEDDING"
                     data-desc="Elegant Christian wedding service capturing pure vows, the white gown, and classic romance.">
@@ -275,7 +289,7 @@
                 </div>
 
                 <!-- Item 3: Pre-wedding Shoot -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="wedding"
                     data-images="assets/pre_wedding/1.jpg,assets/pre_wedding/2.jpg,assets/pre_wedding/3.jpg,assets/pre_wedding/4.jpg,assets/pre_wedding/5.jpg"
                     data-title="PRE-WEDDING SHOOT"
                     data-desc="A dreamy morning pre-wedding session capturing raw intimate glances.">
@@ -292,7 +306,7 @@
                 </div>
 
                 <!-- Item 4: Birthday Celebration -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="birthday"
                     data-images="assets/birthday/1.jpg,assets/birthday/2.jpg,assets/birthday/3.jpg,assets/birthday/4.jpg,assets/birthday/5.jpg"
                     data-title="BIRTHDAY CELEBRATION"
                     data-desc="A stylish 25th birthday close-up, highlighting sparkles and dynamic lens flares.">
@@ -309,7 +323,7 @@
                 </div>
 
                 <!-- Item 5: Candid Portrait -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="portrait"
                     data-images="assets/portrait/1.jpg,assets/portrait/2.jpg,assets/portrait/3.jpg,assets/portrait/4.jpg,assets/portrait/5.jpg"
                     data-title="PORTRAITS"
                     data-desc="High-fashion studio portrait highlighting delicate textures, contrast, and dramatic lighting.">
@@ -326,7 +340,7 @@
                 </div>
 
                 <!-- Item 6: Babies Paradise -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="babies"
                     data-images="assets/babies/1.jpg,assets/babies/2.jpg,assets/babies/3.jpg,assets/babies/4.jpg,assets/babies/5.jpg"
                     data-title="BABIES PARADISE"
                     data-desc="Pure love. Pure moments. Elegant and premium photography for your little ones.">
@@ -343,7 +357,7 @@
                 </div>
 
                 <!-- Item 7: Engagement -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="wedding"
                     data-images="assets/engagement/1.jpg,assets/engagement/2.jpg,assets/engagement/3.jpg,assets/engagement/4.jpg,assets/engagement/5.jpg"
                     data-title="ENGAGEMENT"
                     data-desc="Scenic pre-wedding silhouette against a spectacular dusk sky in the mountains.">
@@ -360,10 +374,10 @@
                 </div>
 
                 <!-- Item 8: Maternity Shoot -->
-                <div class="gallery-item"
+                <div class="gallery-item" data-category="portrait"
                     data-images="assets/maternity/1.jpg,assets/maternity/2.jpg,assets/maternity/3.jpg,assets/maternity/4.jpg,assets/maternity/5.jpg"
                     data-title="MATERNITY"
-                    data-desc="Capturing the dynamic energy, key speakers, and atmospheric details of high-profile events.">
+                    data-desc="Capturing the pure beauty, anticipation, and elegant memories of maternity.">
                     <img src="assets/maternity/cover.jpg" alt="Maternity Shoot" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="gallery-card-info">
