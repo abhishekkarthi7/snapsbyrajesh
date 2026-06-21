@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             mobileToggle.classList.toggle('open');
+            document.body.classList.toggle('mobile-menu-open');
 
             // Animated hamburger toggle lines
             const spans = mobileToggle.querySelectorAll('span');
@@ -64,9 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('open');
+                document.body.classList.remove('mobile-menu-open');
                 mobileToggle.querySelectorAll('span').forEach(s => s.style.transform = 'none');
                 mobileToggle.querySelectorAll('span')[1].style.opacity = '1';
             });
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('open');
+                    document.body.classList.remove('mobile-menu-open');
+                    
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
         });
     }
 
