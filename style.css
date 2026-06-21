@@ -2700,7 +2700,7 @@ body.mobile-menu-open header {
     .nav-links-centered.active li:nth-child(6) { transition-delay: 0.3s; }
 
     .nav-links-centered a {
-        font-family: var(--font-heading);
+        font-family: 'Quicksand', sans-serif !important;
         font-size: 1.05rem !important;
         letter-spacing: 0.12em;
         color: #070709 !important;
