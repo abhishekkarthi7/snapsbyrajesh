@@ -386,6 +386,8 @@ header {
     background: rgba(3, 2, 6, 0);
     backdrop-filter: blur(25px) !important;
     -webkit-backdrop-filter: blur(25px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0), 0 0 20px rgba(6, 182, 212, 0);
     transition: padding var(--transition-smooth), background var(--transition-smooth), border-bottom var(--transition-smooth), box-shadow var(--transition-smooth);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -1715,7 +1717,7 @@ textarea.form-control {
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     z-index: 1;
     filter: brightness(0.28) contrast(1.1);
     animation: bgZoom 25s ease-in-out infinite;
