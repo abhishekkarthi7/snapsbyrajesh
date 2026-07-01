@@ -2917,6 +2917,28 @@ body.mobile-menu-open header {
 }
 
 
+@media (max-width: 992px) {
+    /* Mobile performance optimizations: stop continuous repaint/reflow animations */
+    body::after {
+        animation: none !important; /* Stop fixed stars float repaints */
+    }
+    .bio-section::before {
+        display: none !important; /* Hide expensive blur filters on mobile */
+    }
+    .hero-card-slide.active .hero-card-fallback-img {
+        animation: none !important; /* Stop continuous image scale computations */
+    }
+    .gallery-item:hover .gallery-overlay {
+        backdrop-filter: none !important; /* Disable expensive layout filters */
+        -webkit-backdrop-filter: none !important;
+    }
+    .lightbox-modal {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(3, 2, 6, 0.98) !important; /* Solid dark background */
+    }
+}
+
 /* ACCESSIBILITY: RESPECT USER REDUCED MOTION PREFERENCES */
 @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {

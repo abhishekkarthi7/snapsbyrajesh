@@ -1,49 +1,74 @@
 /*
 ========================================================================
-   SBR PHOTO - INTERACTIVE RUNTIME SYSTEM
+   SBR PHOTO - INTERACTIVE RUNTIME SYSTEM (OPTIMIZED)
 ========================================================================
 */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. HEADER SCROLL & LINK HIGHLIGHTING ---
+    // --- 1. HEADER SCROLL & PERFORMANCE-OPTIMIZED LINK HIGHLIGHTING ---
     const header = document.getElementById('main-header');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     const progressBar = document.querySelector('.scroll-progress-bar');
 
+    let ticking = false;
+
+    // requestAnimationFrame scroll listener for 60fps tracking
     window.addEventListener('scroll', () => {
-        // Update Scroll Progress Bar
-        if (progressBar) {
-            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
-            progressBar.style.width = `${scrollPercent}%`;
-        }
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                // Update Scroll Progress Bar
+                if (progressBar) {
+                    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
+                    progressBar.style.width = `${scrollPercent}%`;
+                }
 
-        // Sticky Header class toggler
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+                // Sticky Header class toggler (Minimize layout thrashing)
+                if (window.scrollY > 50) {
+                    if (header && !header.classList.contains('scrolled')) {
+                        header.classList.add('scrolled');
+                    }
+                } else {
+                    if (header && header.classList.contains('scrolled')) {
+                        header.classList.remove('scrolled');
+                    }
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
+    }, { passive: true });
 
-        // Active link highlighting on scroll
-        let currentSectionId = 'home';
-        sections.forEach(sec => {
-            const secTop = sec.offsetTop - 120;
-            const secHeight = sec.offsetHeight;
-            if (window.scrollY >= secTop && window.scrollY < secTop + secHeight) {
-                currentSectionId = sec.getAttribute('id');
+    // Active Section Link Tracker using IntersectionObserver (highly optimized native API)
+    const sectionObserverOptions = {
+        root: null,
+        rootMargin: '-25% 0px -55% 0px',
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeId = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${activeId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
             }
         });
+    }, sectionObserverOptions);
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active');
-            }
-        });
+    sections.forEach(sec => {
+        if (sec.getAttribute('id')) {
+            sectionObserver.observe(sec);
+        }
     });
+
 
     // --- 2. MOBILE HAMBURGER MENU DRAWER ---
     const mobileToggle = document.getElementById('mobile-toggle');
@@ -112,6 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSlides[currentHeroSlide].classList.remove('active');
         if (bgVideoSlides.length > currentHeroSlide) {
             bgVideoSlides[currentHeroSlide].classList.remove('active');
+            
+            // PAUSE hidden background videos to reclaim hardware decoding memory!
+            const inactiveBgVideo = bgVideoSlides[currentHeroSlide].querySelector('.hero-bg-video');
+            if (inactiveBgVideo) {
+                try {
+                    inactiveBgVideo.pause();
+                } catch (e) {}
+            }
         }
 
         // Update index
@@ -122,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bgVideoSlides.length > currentHeroSlide) {
             bgVideoSlides[currentHeroSlide].classList.add('active');
 
-            // Play active background video
+            // Play active background video only
             const activeBgVideo = bgVideoSlides[currentHeroSlide].querySelector('.hero-bg-video');
             if (activeBgVideo) {
                 try {
@@ -146,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSlides.length > 1) {
         resetHeroSlideTimer();
 
-        // Programmatically bypass browser cache for local video files to play newly uploaded videos instantly
+        // Programmatically bypass browser cache for local video files
         if (bgVideoSlides.length > 0) {
             bgVideoSlides.forEach(slide => {
                 const video = slide.querySelector('.hero-bg-video');
@@ -155,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (firstSource) {
                         const src = firstSource.getAttribute('src');
                         if (src && src.startsWith('assets/')) {
-                            // Direct src assignment forces browser to reload the correct file
                             video.src = `${src}?v=${Date.now()}`;
                             video.load();
                         }
@@ -174,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Play active background video on first user interaction in case of browser autoplay blocks
+        // Play active background video on first user interaction
         const playVideoOnInteraction = () => {
             if (bgVideoSlides.length > currentHeroSlide) {
                 const activeBgVideo = bgVideoSlides[currentHeroSlide].querySelector('.hero-bg-video');
@@ -186,8 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
-        document.addEventListener('click', playVideoOnInteraction);
-        document.addEventListener('keydown', playVideoOnInteraction);
+        document.addEventListener('click', playVideoOnInteraction, { once: true });
+        document.addEventListener('keydown', playVideoOnInteraction, { once: true });
 
         if (heroPrevBtn) {
             heroPrevBtn.addEventListener('click', () => showHeroSlide(currentHeroSlide - 1));
@@ -200,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. BIOGRAPHY IMAGE AUTO-CHANGER (SLIDESHOW) ---
     const bioImages = document.querySelectorAll('.bio-portrait-img');
     let currentBioImgIdx = 0;
-    const bioImgInterval = 4000; // 4 seconds per photographer slide
+    const bioImgInterval = 4000;
 
     function cycleBioImages() {
         if (bioImages.length <= 1) return;
@@ -293,14 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateLightboxImage() {
         if (!lightboxImg || currentProjectImages.length === 0) return;
         
-        // Fade out transition effect
         lightboxImg.style.opacity = '0';
         
         setTimeout(() => {
             lightboxImg.src = currentProjectImages[currentImageIndex];
             lightboxImg.style.opacity = '1';
             
-            // Highlight active thumbnail
             const thumbs = lightboxPreviewsGrid.querySelectorAll('.lightbox-thumb');
             thumbs.forEach((thumb, idx) => {
                 if (idx === currentImageIndex) {
@@ -340,16 +370,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLightboxImage();
     }
 
-    // Attach event listeners to gallery items for Learn More clicks
     galleryItems.forEach(item => {
         const learnMoreBtn = item.querySelector('.learn-more-action');
         if (learnMoreBtn) {
             learnMoreBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Avoid triggering parent click
+                e.stopPropagation();
                 openProjectLightbox(item);
             });
         }
-        // Fallback: clicking the item overlay opens as well
         const overlay = item.querySelector('.gallery-overlay');
         if (overlay) {
             overlay.addEventListener('click', () => {
@@ -565,7 +593,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showToast("PREPARING WHATSAPP BOOKING HANDSHAKE...", "fa-clock");
 
-        // Format message for WhatsApp
         const message = `HELLO SBR PHOTO STUDIO,
 
 I WOULD LIKE TO BOOK A BESPOKE SHOOT! HERE ARE MY BOOKING DETAILS:
@@ -581,17 +608,8 @@ CLIENT INFORMATION:
 
 THANK YOU!`;
 
-        // URL encode the message
         const encodedMessage = encodeURIComponent(message);
-        
-        // =========================================================================
-        // USER CONFIGURATION: WHATSAPP PHONE NUMBER
-        // =========================================================================
-        // This is the phone number where WhatsApp booking requests are sent.
-        // Format: [Country Code][Number] without spaces or '+' (e.g. 919347071994).
-        // Change the number inside the quotes below to your exact WhatsApp number!
         const whatsappNumber = "919347071994"; 
-        // ========================================================================= 
 
         setTimeout(() => {
             if (wizardForm) wizardForm.reset();
@@ -599,7 +617,6 @@ THANK YOU!`;
             updateWizardUI();
             closeBookingModal();
 
-            // Redirect to WhatsApp in a new tab
             const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
             window.open(waUrl, '_blank');
 
@@ -628,7 +645,6 @@ THANK YOU!`;
                 const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
                 const mailtoUrl = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
-                // Redirect to system's mail client (e.g. Gmail/Outlook)
                 window.location.href = mailtoUrl;
 
                 showToast(`Redirected to mail client!`, "fa-circle-check");
@@ -637,7 +653,6 @@ THANK YOU!`;
     }
 
     // --- 9. TOAST NOTIFICATION HANDLER ---
-    const toastBox = document.getElementById('toast-box');
     const successToast = document.getElementById('success-toast');
     const toastMsg = document.getElementById('toast-msg');
     let toastTimeout;
@@ -683,8 +698,8 @@ THANK YOU!`;
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05, // Slightly lower threshold for faster trigger on mobile
+        rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => {
