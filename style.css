@@ -2688,7 +2688,28 @@ body.mobile-menu-open header {
         padding: 130px 20px 100px 20px !important;
     }
     .hero-widescreen-showcase {
-        aspect-ratio: 16 / 9 !important; /* Slightly taller aspect-ratio on mobile */
+        aspect-ratio: auto !important; /* Remove aspect ratio constraint on container */
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+    .hero-showcase-card {
+        position: relative !important;
+        width: 100% !important;
+        aspect-ratio: 16 / 9.5 !important; /* Slide frame aspect ratio specifically */
+        border-radius: var(--radius-lg) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: var(--shadow-premium) !important;
+        overflow: hidden !important;
+    }
+    .form-row-2col {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
     }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -2701,7 +2722,10 @@ body.mobile-menu-open header {
     }
     .contact-card.glass-panel,
     .form-card.glass-panel {
-        padding: 30px 24px !important;
+        padding: 35px 24px !important;
+    }
+    .form-title {
+        font-size: 2.2rem !important;
     }
     .bio-container {
         grid-template-columns: 1fr !important;
@@ -2740,8 +2764,10 @@ body.mobile-menu-open header {
         gap: 16px !important;
         border-radius: var(--radius-md) !important;
         padding: 20px !important;
-        margin-top: 40px !important;
-        background: rgba(255, 255, 255, 0.98) !important;
+        margin-top: 15px !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
     }
     .categories-segment,
     .location-segment {
@@ -2916,28 +2942,6 @@ body.mobile-menu-open header {
     }
 }
 
-
-@media (max-width: 992px) {
-    /* Mobile performance optimizations: stop continuous repaint/reflow animations */
-    body::after {
-        animation: none !important; /* Stop fixed stars float repaints */
-    }
-    .bio-section::before {
-        display: none !important; /* Hide expensive blur filters on mobile */
-    }
-    .hero-card-slide.active .hero-card-fallback-img {
-        animation: none !important; /* Stop continuous image scale computations */
-    }
-    .gallery-item:hover .gallery-overlay {
-        backdrop-filter: none !important; /* Disable expensive layout filters */
-        -webkit-backdrop-filter: none !important;
-    }
-    .lightbox-modal {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        background: rgba(3, 2, 6, 0.98) !important; /* Solid dark background */
-    }
-}
 
 /* ACCESSIBILITY: RESPECT USER REDUCED MOTION PREFERENCES */
 @media (prefers-reduced-motion: reduce) {
