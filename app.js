@@ -243,6 +243,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 4.6 BOTTOM BAR CATEGORY LINK TRIGGERS ---
+    const barCategoryLinks = document.querySelectorAll('.category-links a');
+    barCategoryLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const filterValue = link.getAttribute('data-filter');
+            const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterValue}"]`);
+            if (targetBtn) {
+                targetBtn.click();
+            }
+        });
+    });
+
     // --- 5. PORTFOLIO "LEARN MORE" & DYNAMIC LIGHTBOX ---
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
