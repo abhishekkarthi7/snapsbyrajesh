@@ -1817,7 +1817,7 @@ footer.footer-centered {
 }
 
 .footer-centered-social-buttons {
-    display: center;
+    display: flex;
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
@@ -2198,23 +2198,33 @@ footer.footer-centered {
     left: 100%;
 }
 
+/* Rounded modal close circle button style */
 .booking-close-btn {
     position: absolute;
     top: 22px;
     right: 26px;
-    background: none;
-    border: none;
-    font-size: 2.3rem;
-    color: #7c7c88;
+    background: rgba(7, 7, 9, 0.04) !important;
+    border: 1px solid rgba(7, 7, 9, 0.12) !important;
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+    color: #7c7c88 !important;
     cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.5rem !important;
     line-height: 1;
-    transition: var(--transition-fast);
+    padding-bottom: 4px !important;
+    transition: var(--transition-fast) !important;
     z-index: 100;
 }
 
 .booking-close-btn:hover {
-    color: var(--color-gold-dark);
-    transform: scale(1.08);
+    color: var(--color-gold-dark) !important;
+    background: rgba(184, 145, 70, 0.08) !important;
+    border-color: var(--color-gold-dark) !important;
+    transform: scale(1.08) !important;
 }
 
 .booking-wizard-card .section-header .tagline {
@@ -2605,7 +2615,7 @@ body.mobile-menu-open header {
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid rgba(0, 0, 0, 0.02) !important;
         background: rgba(0, 0, 0, 0.02) !important;
         display: flex;
         align-items: center;
