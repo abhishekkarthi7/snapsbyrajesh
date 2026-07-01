@@ -398,7 +398,7 @@ header.scrolled {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-space-between: space-between;
+    justify-content: space-between;
     align-items: center;
     gap: 24px;
     width: 100%;
@@ -606,6 +606,29 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
     left: 0;
 }
 
+/* Header Corner Social Links */
+.desktop-social-link {
+    display: inline-block;
+}
+
+.desktop-social-link a {
+    font-size: 1.05rem !important;
+    color: var(--color-text-secondary) !important;
+    transition: color var(--transition-fast), transform var(--transition-fast) !important;
+    padding: 0 4px !important;
+}
+
+.desktop-social-link a:hover {
+    color: var(--color-gold) !important;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+    .desktop-social-link {
+        display: none !important;
+    }
+}
+
 .double-logo-wrapper.footer-version {
     gap: 12px;
     justify-content: flex-start !important;
@@ -676,7 +699,7 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 140px 4% 120px 4%;
+    padding: 130px 4% 110px 4%;
     background: var(--color-bg-primary);
 }
 
@@ -695,44 +718,17 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
     align-items: center;
     z-index: 3;
     position: relative;
+    padding-top: 10px;
 }
 
-/* Centered Header Text */
-.hero-text-centered {
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    line-height: 1.3;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-}
-
-.hero-title-main {
-    font-weight: 300 !important;
-    color: #ffffff;
-}
-
-.hero-title-sub {
-    font-weight: 400 !important;
-    color: var(--color-gold);
-}
-
-/* Widescreen Card Slideshow Banner Container */
+/* Widescreen Card Slideshow Banner Container (Enlarged Height) */
 .hero-widescreen-showcase {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 6; /* Cinematic landscape ratio */
+    aspect-ratio: 16 / 8.2; /* Taller cinematic widescreen aspect ratio */
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow-premium), 0 0 30px rgba(0, 82, 255, 0.05);
+    box-shadow: var(--shadow-premium), 0 0 35px rgba(0, 82, 255, 0.08);
     overflow: visible; /* Allows the bottom bar to overlap nicely */
     background: #06050b;
 }
@@ -1469,7 +1465,7 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), var(--shadow-glow-blue);
 }
 
-/* General Inquiries Form UI Redesign (Obsidian Gold theme) */
+/* General Inquiries Form UI Redesign */
 .form-card.glass-panel {
     border-radius: var(--radius-lg) !important;
     padding: 45px 40px !important;
@@ -1568,7 +1564,7 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
 
 /* General Inquiry Form Fields (Compact layouts) */
 .form-group {
-    margin-bottom: 20px; /* Reduced vertical spacing */
+    margin-bottom: 20px; 
     display: flex;
     flex-direction: column;
 }
@@ -1588,8 +1584,8 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
     border: 1px solid rgba(255, 255, 255, 0.07) !important;
     border-radius: var(--radius-sm) !important;
     color: #ffffff !important;
-    padding: 10px 14px !important; /* Decreased padding to make textbox smaller */
-    font-size: 0.85rem !important; /* Decreased font size for compact look */
+    padding: 10px 14px !important; /* Compact padding */
+    font-size: 0.85rem !important; /* Compact size */
     font-style: normal !important;
     font-weight: 500 !important;
     transition: all var(--transition-smooth) !important;
@@ -1613,7 +1609,7 @@ header.scrolled .double-logo-wrapper .logo-right-sub {
 }
 
 textarea.form-control {
-    min-height: 90px !important; /* Decreased textarea height */
+    min-height: 90px !important; 
     resize: vertical;
 }
 
@@ -1621,7 +1617,7 @@ textarea.form-control {
     background: var(--gradient-gold) !important;
     color: #030206 !important;
     border: none !important;
-    padding: 14px 28px !important; /* Slightly more compact button */
+    padding: 14px 28px !important; 
     border-radius: var(--radius-sm) !important;
     font-size: 0.85rem !important;
     font-weight: 700 !important;
@@ -2662,12 +2658,6 @@ body.mobile-menu-open header {
     .hero-widescreen-showcase {
         aspect-ratio: 16 / 9 !important; /* Slightly taller aspect-ratio on mobile */
     }
-    .hero-title {
-        font-size: 1.6rem !important;
-        line-height: 1.35 !important;
-        margin-bottom: 24px !important;
-        letter-spacing: 0.08em !important;
-    }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -2851,10 +2841,6 @@ body.mobile-menu-open header {
 }
 
 @media (max-width: 480px) {
-    .hero-title { 
-        font-size: 1.35rem !important; 
-    }
-    
     /* Double logo responsiveness on mobile */
     .double-logo-wrapper .logo-left-brand {
         font-size: 1.0rem !important;
@@ -2896,10 +2882,6 @@ body.mobile-menu-open header {
     .contact-section h2 {
         font-size: 1.8rem !important;
     }
-}
-
-@media (max-width: 360px) {
-    .hero-title { font-size: 1.2rem !important; }
 }
 
 
