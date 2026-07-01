@@ -10,8 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const progressBar = document.querySelector('.scroll-progress-bar');
 
     window.addEventListener('scroll', () => {
+        // Update Scroll Progress Bar
+        if (progressBar) {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
+            progressBar.style.width = `${scrollPercent}%`;
+        }
+
         // Sticky Header class toggler
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -646,6 +654,29 @@ THANK YOU!`;
         video.addEventListener('playing', () => {
             video.classList.add('playing');
         });
+    });
+
+    // --- 11. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER) ---
+    const revealElements = document.querySelectorAll('.gallery-item, .stat-counter-box, .approach-item, .contact-card, .form-card, .bio-story-wrap, .bio-img-col, .social-journey-wrap, .section-header');
+    
+    revealElements.forEach(el => {
+        el.classList.add('reveal-item');
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
     });
 
 });

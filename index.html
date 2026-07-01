@@ -19,10 +19,12 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Pinyon+Script&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=6.1">
+    <link rel="stylesheet" href="style.css?v=7.0">
 </head>
 
 <body>
+
+    <div class="scroll-progress-bar"></div>
 
     <!-- Header Navigation -->
     <header id="main-header">
@@ -555,6 +557,14 @@
                 <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 8px;" id="lightbox-desc">
                     Asset Description</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-box" class="toast-container">
+        <div id="success-toast" class="toast">
+            <div class="toast-icon"></div>
+            <div id="toast-msg" class="toast-message"></div>
         </div>
     </div>
 
