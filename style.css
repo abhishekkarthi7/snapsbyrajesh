@@ -383,7 +383,7 @@ header {
     width: 100%;
     z-index: 1000;
     padding: 38px 40px;
-    background: transparent;
+    background: rgba(3, 2, 6, 0);
     backdrop-filter: blur(25px) !important;
     -webkit-backdrop-filter: blur(25px) !important;
     transition: padding var(--transition-smooth), background var(--transition-smooth), border-bottom var(--transition-smooth), box-shadow var(--transition-smooth);
